@@ -1,0 +1,227 @@
+[
+    {
+        "code": "1000",
+        "name": "Activo",
+        "nameEn": "Assets",
+        "type": "asset",
+        "nature": "debit",
+        "parent": null,
+        "isGroup": true
+    },
+    {
+        "code": "1010",
+        "name": "Caja",
+        "nameEn": "Cash",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1020",
+        "name": "Bancos",
+        "nameEn": "Banks",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1030",
+        "name": "Clientes",
+        "nameEn": "Accounts Receivable",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1040",
+        "name": "Almacén / Inventario",
+        "nameEn": "Inventory",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1050",
+        "name": "Papelería y útiles",
+        "nameEn": "Office Supplies",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1060",
+        "name": "Rentas pagadas por anticipado",
+        "nameEn": "Prepaid Rent",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1070",
+        "name": "IVA Acreditable",
+        "nameEn": "Input VAT",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1100",
+        "name": "Mobiliario y equipo",
+        "nameEn": "Furniture & Equipment",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1110",
+        "name": "Terrenos",
+        "nameEn": "Land",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1120",
+        "name": "Edificios",
+        "nameEn": "Buildings",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "2000",
+        "name": "Pasivo",
+        "nameEn": "Liabilities",
+        "type": "liability",
+        "nature": "credit",
+        "parent": null,
+        "isGroup": true
+    },
+    {
+        "code": "2010",
+        "name": "Proveedores",
+        "nameEn": "Accounts Payable",
+        "type": "liability",
+        "nature": "credit",
+        "parent": "2000",
+        "isGroup": false
+    },
+    {
+        "code": "2020",
+        "name": "Anticipo de clientes",
+        "nameEn": "Customer Advances",
+        "type": "liability",
+        "nature": "credit",
+        "parent": "2000",
+        "isGroup": false
+    },
+    {
+        "code": "2030",
+        "name": "IVA por pagar",
+        "nameEn": "Output VAT",
+        "type": "liability",
+        "nature": "credit",
+        "parent": "2000",
+        "isGroup": false
+    },
+    {
+        "code": "2040",
+        "name": "Acreedores diversos",
+        "nameEn": "Other Payables",
+        "type": "liability",
+        "nature": "credit",
+        "parent": "2000",
+        "isGroup": false
+    },
+    {
+        "code": "2050",
+        "name": "Documentos por pagar",
+        "nameEn": "Notes Payable",
+        "type": "liability",
+        "nature": "credit",
+        "parent": "2000",
+        "isGroup": false
+    },
+    {
+        "code": "3000",
+        "name": "Capital Contable",
+        "nameEn": "Equity",
+        "type": "equity",
+        "nature": "credit",
+        "parent": null,
+        "isGroup": true
+    },
+    {
+        "code": "3010",
+        "name": "Capital social",
+        "nameEn": "Share Capital",
+        "type": "equity",
+        "nature": "credit",
+        "parent": "3000",
+        "isGroup": false
+    },
+    {
+        "code": "3020",
+        "name": "Utilidad del ejercicio",
+        "nameEn": "Net Income",
+        "type": "equity",
+        "nature": "credit",
+        "parent": "3000",
+        "isGroup": false
+    },
+    {
+        "code": "4000",
+        "name": "Ingresos",
+        "nameEn": "Revenue",
+        "type": "revenue",
+        "nature": "credit",
+        "parent": null,
+        "isGroup": true
+    },
+    {
+        "code": "4010",
+        "name": "Ventas",
+        "nameEn": "Sales",
+        "type": "revenue",
+        "nature": "credit",
+        "parent": "4000",
+        "isGroup": false
+    },
+    {
+        "code": "5000",
+        "name": "Gastos",
+        "nameEn": "Expenses",
+        "type": "expense",
+        "nature": "debit",
+        "parent": null,
+        "isGroup": true
+    },
+    {
+        "code": "5010",
+        "name": "Gastos generales",
+        "nameEn": "General Expenses",
+        "type": "expense",
+        "nature": "debit",
+        "parent": "5000",
+        "isGroup": false
+    },
+    {
+        "code": "5020",
+        "name": "Gastos de renta",
+        "nameEn": "Rent Expense",
+        "type": "expense",
+        "nature": "debit",
+        "parent": "5000",
+        "isGroup": false
+    }
+]

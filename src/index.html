@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ContaFácil</title>
+
+  <!-- Fuentes: Inter desde local -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/modules.css">
+</head>
+
+<body>
+  <!-- Barra superior -->
+  <header class="topbar" id="topbar">
+    <div class="topbar__brand">
+      <div class="topbar__logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect width="28" height="28" rx="8" fill="var(--color-accent)" />
+          <text x="6" y="20" font-size="16" font-weight="700" fill="white" font-family="Inter">C</text>
+        </svg>
+      </div>
+      <span class="topbar__title">ContaFácil</span>
+    </div>
+
+    <nav class="topbar__nav" id="mainNav">
+      <button class="topbar__nav-item active" data-route="dashboard" data-i18n="nav.dashboard">Inicio</button>
+      <button class="topbar__nav-item" data-route="catalog" data-i18n="nav.catalog">Catálogo</button>
+      <button class="topbar__nav-item" data-route="entries" data-i18n="nav.entries">Asientos</button>
+      <button class="topbar__nav-item" data-route="balance" data-i18n="nav.balance">Balance</button>
+      <button class="topbar__nav-item" data-route="settings" data-i18n="nav.settings">Ajustes</button>
+    </nav>
+
+    <div class="topbar__actions">
+      <!-- Buscador -->
+      <div class="topbar__search">
+        <svg class="topbar__search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.35-4.35" />
+        </svg>
+        <input type="text" class="topbar__search-input" placeholder="Buscar..."
+          data-i18n-placeholder="search.placeholder" id="globalSearch">
+      </div>
+
+      <!-- Selector de idioma -->
+      <button class="topbar__lang-toggle" id="langToggle" title="Cambiar idioma">
+        <span id="langLabel">ES</span>
+      </button>
+
+      <!-- Avatar de usuario -->
+      <div class="topbar__avatar">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <circle cx="16" cy="16" r="16" fill="var(--color-gray-200)" />
+          <circle cx="16" cy="12" r="5" fill="var(--color-gray-400)" />
+          <path d="M6 28c0-5.523 4.477-10 10-10s10 4.477 10 10" fill="var(--color-gray-400)" />
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="main-content" id="mainContent">
+    <!-- Aquí se inyectan las vistas dinámicamente -->
+    <div class="view-container" id="viewContainer">
+      <!-- El contenido se carga desde los módulos JS -->
+    </div>
+  </main>
+
+  <!-- Toast/Notificaciones -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Librerías externas -->
+  <script src="../node_modules/chart.js/dist/chart.umd.js"></script>
+
+  <!-- Motor de la app -->
+  <script src="js/i18n.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/engine/accounts.js"></script>
+  <script src="js/engine/accounting.js"></script>
+  <script src="js/engine/reports.js"></script>
+
+  <!-- Módulos de interfaz -->
+  <script src="js/modules/dashboard.js"></script>
+  <script src="js/modules/catalog.js"></script>
+  <script src="js/modules/entries.js"></script>
+  <script src="js/modules/balance.js"></script>
+  <script src="js/modules/export.js"></script>
+  <script src="js/modules/settings.js"></script>
+
+  <!-- Componentes reutilizables -->
+  <script src="js/components/searchable-select.js"></script>
+  <script src="js/components/command-palette.js"></script>
+
+  <!-- Router y App principal -->
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

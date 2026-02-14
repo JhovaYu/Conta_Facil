@@ -1,0 +1,527 @@
+// Aquí manejo toda la internacionalización de la app
+// Tengo dos diccionarios: español (por defecto) y inglés
+// Uso una función t('clave') para obtener la traducción actual
+
+// Defino todas las traducciones de la app
+const I18N_DICTIONARIES = {
+    es: {
+        // Navegación
+        'nav.dashboard': 'Inicio',
+        'nav.catalog': 'Catálogo',
+        'nav.entries': 'Asientos',
+        'nav.balance': 'Balance',
+        'nav.settings': 'Ajustes',
+
+        // Búsqueda
+        'search.placeholder': 'Buscar cuentas, asientos...',
+
+        // Dashboard
+        'dashboard.welcome': 'Panel General',
+        'dashboard.welcomeSubtitle': 'Resumen de tu contabilidad',
+        'dashboard.totalAssets': 'Total Activos',
+        'dashboard.totalLiabilities': 'Total Pasivos',
+        'dashboard.totalEquity': 'Capital Contable',
+        'dashboard.totalEntries': 'Asientos Registrados',
+        'dashboard.recentEntries': 'Últimos Asientos',
+        'dashboard.quickActions': 'Accesos Rápidos',
+        'dashboard.chartTitle': 'Distribución Financiera',
+        'dashboard.noEntries': 'Sin asientos registrados',
+        'dashboard.noEntriesDesc': 'Comienza registrando tu primer asiento contable',
+        'dashboard.startEntry': 'Registrar Asiento',
+        'dashboard.entries': 'asientos',
+
+        // Catálogo de cuentas
+        'catalog.title': 'Catálogo de Cuentas',
+        'catalog.subtitle': 'Administra las cuentas contables de tu empresa',
+        'catalog.addAccount': 'Nueva Cuenta',
+        'catalog.code': 'Código',
+        'catalog.name': 'Nombre',
+        'catalog.type': 'Tipo',
+        'catalog.nature': 'Naturaleza',
+        'catalog.balance': 'Saldo',
+        'catalog.actions': 'Acciones',
+        'catalog.all': 'Todas',
+        'catalog.asset': 'Activo',
+        'catalog.liability': 'Pasivo',
+        'catalog.equity': 'Capital',
+        'catalog.revenue': 'Ingreso',
+        'catalog.expense': 'Gasto',
+        'catalog.debit': 'Deudora',
+        'catalog.credit': 'Acreedora',
+        'catalog.edit': 'Editar',
+        'catalog.delete': 'Eliminar',
+        'catalog.confirmDelete': '¿Estás seguro de que quieres eliminar esta cuenta?',
+        'catalog.accountCode': 'Código de cuenta',
+        'catalog.accountName': 'Nombre de cuenta',
+        'catalog.accountNameEn': 'Nombre en inglés',
+        'catalog.accountType': 'Tipo de cuenta',
+        'catalog.accountNature': 'Naturaleza',
+        'catalog.parentAccount': 'Cuenta padre',
+        'catalog.isGroup': 'Es cuenta de grupo',
+        'catalog.none': 'Ninguna',
+        'catalog.save': 'Guardar',
+        'catalog.cancel': 'Cancelar',
+        'catalog.editAccount': 'Editar Cuenta',
+        'catalog.newAccount': 'Nueva Cuenta',
+
+        // Asientos contables
+        'entries.title': 'Asientos Contables',
+        'entries.subtitle': 'Registra las transacciones de tu empresa',
+        'entries.selectType': 'Selecciona el tipo de asiento',
+        'entries.opening': 'Asiento de Apertura',
+        'entries.openingDesc': 'Saldos iniciales de las cuentas',
+        'entries.cashPurchase': 'Compra en Efectivo',
+        'entries.cashPurchaseDesc': 'Compra de mercancía pagada al contado',
+        'entries.creditPurchase': 'Compra a Crédito',
+        'entries.creditPurchaseDesc': 'Compra de mercancía a crédito con proveedor',
+        'entries.combinedPurchase': 'Compra Combinada',
+        'entries.combinedPurchaseDesc': 'Compra con pago parcial efectivo y crédito',
+        'entries.customerAdvance': 'Anticipo de Clientes',
+        'entries.customerAdvanceDesc': 'Recepción de anticipo de un cliente',
+        'entries.stationeryPurchase': 'Compra de Papelería',
+        'entries.stationeryPurchaseDesc': 'Compra de artículos de papelería y útiles',
+        'entries.prepaidRent': 'Rentas Pagadas por Anticipado',
+        'entries.prepaidRentDesc': 'Pago de renta por adelantado',
+        'entries.freeEntry': 'Asiento Libre',
+        'entries.freeEntryDesc': 'Registra cualquier asiento personalizado',
+        'entries.date': 'Fecha',
+        'entries.description': 'Descripción',
+        'entries.descriptionPlaceholder': 'Describe la transacción...',
+        'entries.account': 'Cuenta',
+        'entries.debit': 'Cargo',
+        'entries.credit': 'Abono',
+        'entries.remove': 'Quitar',
+        'entries.addRow': 'Agregar Movimiento',
+        'entries.totalDebits': 'Total Cargos',
+        'entries.totalCredits': 'Total Abonos',
+        'entries.save': 'Registrar Asiento',
+        'entries.cancel': 'Cancelar',
+        'entries.balanced': '✓ Cuadrado',
+        'entries.unbalanced': '✗ Descuadrado',
+        'entries.history': 'Historial de Asientos',
+        'entries.entryNumber': 'Asiento #',
+        'entries.noEntries': 'No hay asientos registrados',
+        'entries.noEntriesDesc': 'Selecciona un tipo de asiento arriba para comenzar',
+        'entries.deleteEntry': 'Eliminar Asiento',
+        'entries.confirmDeleteEntry': '¿Estás seguro de que quieres eliminar este asiento?',
+        'entries.selectAccount': 'Seleccionar cuenta...',
+        'entries.amount': 'Monto',
+        'entries.amountPlaceholder': '0.00',
+        'entries.back': 'Volver',
+        'entries.newEntry': 'Nuevo Asiento',
+
+        // Balance general
+        'balance.title': 'Estado de Situación Financiera',
+        'balance.subtitle': 'Balance General de tu empresa',
+        'balance.companyName': 'Nombre de la empresa',
+        'balance.reportTitle': 'Estado de Situación Financiera',
+        'balance.asOf': 'Al',
+        'balance.assets': 'Activo',
+        'balance.currentAssets': 'Activo Circulante',
+        'balance.fixedAssets': 'Activo No Circulante',
+        'balance.totalAssets': 'Total Activo',
+        'balance.liabilities': 'Pasivo',
+        'balance.currentLiabilities': 'Pasivo a Corto Plazo',
+        'balance.totalLiabilities': 'Total Pasivo',
+        'balance.equity': 'Capital Contable',
+        'balance.totalEquity': 'Total Capital Contable',
+        'balance.totalLiabilitiesEquity': 'Total Pasivo + Capital',
+        'balance.equationValid': '✓ La ecuación contable se cumple: Activo = Pasivo + Capital',
+        'balance.equationInvalid': '✗ La ecuación contable NO se cumple',
+        'balance.preparedBy': 'Elaboró',
+        'balance.reviewedBy': 'Revisó',
+        'balance.authorizedBy': 'Autorizó',
+        'balance.accountant': 'Contador',
+        'balance.manager': 'Gerente General',
+        'balance.director': 'Director',
+        'balance.currencyNote': 'Cifras expresadas en pesos mexicanos (MXN)',
+        'balance.exportPdf': 'Exportar PDF',
+        'balance.print': 'Imprimir',
+        'balance.noData': 'Sin datos para mostrar',
+        'balance.noDataDesc': 'Registra asientos contables para ver el balance',
+
+        // General
+        'general.save': 'Guardar',
+        'general.cancel': 'Cancelar',
+        'general.delete': 'Eliminar',
+        'general.edit': 'Editar',
+        'general.close': 'Cerrar',
+        'general.confirm': 'Confirmar',
+        'general.success': 'Operación exitosa',
+        'general.error': 'Error en la operación',
+        'general.currency': '$',
+
+        // Toasts
+        'toast.entrySaved': 'Asiento registrado correctamente',
+        'toast.entryDeleted': 'Asiento eliminado',
+        'toast.accountSaved': 'Cuenta guardada correctamente',
+        'toast.accountDeleted': 'Cuenta eliminada',
+        'toast.pdfExported': 'PDF exportado correctamente',
+        'toast.validationError': 'Los cargos y abonos deben cuadrar',
+        'toast.requiredFields': 'Completa todos los campos requeridos',
+        'toast.dataSaved': 'Datos guardados',
+
+        // Settings / Perfil
+        'settings.title': 'Configuración',
+        'settings.subtitle': 'Personaliza tu aplicación y datos de empresa',
+        'settings.companyTab': 'Empresa',
+        'settings.pdfTab': 'PDF',
+        'settings.macrosTab': 'Macros',
+        'settings.companyInfo': 'Información de la Empresa',
+        'settings.companyName': 'Nombre de la Empresa',
+        'settings.companyNamePlaceholder': 'Mi Empresa S.A. de C.V.',
+        'settings.rfc': 'RFC',
+        'settings.address': 'Dirección',
+        'settings.addressPlaceholder': 'Calle, Colonia, Ciudad, Estado',
+        'settings.phone': 'Teléfono',
+        'settings.email': 'Correo Electrónico',
+        'settings.fiscalYear': 'Año Fiscal',
+        'settings.currency': 'Moneda',
+        'settings.signatures': 'Firmas del Balance',
+        'settings.preparedByName': 'Nombre del Elaborador',
+        'settings.reviewedByName': 'Nombre del Revisor',
+        'settings.authorizedByName': 'Nombre del Autorizador',
+        'settings.pdfCustomization': 'Personalización del PDF',
+        'settings.pdfDesc': 'Elige qué elementos incluir al exportar el balance a PDF',
+        'settings.pdfHeader': 'Encabezado',
+        'settings.pdfBody': 'Cuerpo',
+        'settings.pdfFooter': 'Pie de Página',
+        'settings.pdfFormat': 'Formato',
+        'settings.pdfShowCompany': 'Mostrar nombre de empresa',
+        'settings.pdfShowRfc': 'Mostrar RFC',
+        'settings.pdfShowAddress': 'Mostrar dirección',
+        'settings.pdfShowDate': 'Mostrar fecha del reporte',
+        'settings.pdfShowCodes': 'Mostrar códigos de cuenta',
+        'settings.pdfShowEquation': 'Mostrar ecuación contable',
+        'settings.pdfShowZero': 'Mostrar cuentas sin saldo',
+        'settings.pdfShowSignatures': 'Mostrar firmas',
+        'settings.pdfShowNote': 'Mostrar nota de moneda',
+        'settings.pdfShowPages': 'Mostrar número de página',
+        'settings.pdfOrientation': 'Orientación',
+        'settings.portrait': 'Vertical',
+        'settings.landscape': 'Horizontal',
+        'settings.pdfPageSize': 'Tamaño de Página',
+        'settings.pdfFontSize': 'Tamaño de Fuente',
+        'settings.small': 'Pequeña',
+        'settings.medium': 'Mediana',
+        'settings.large': 'Grande',
+        'settings.resetDefaults': 'Restaurar Predeterminados',
+        'settings.macrosTitle': 'Macros Disponibles',
+        'settings.macrosDesc': 'Ejecuta acciones rápidas con un clic o usando Ctrl+K',
+        'settings.openPalette': 'Abrir Paleta de Comandos',
+        'settings.keyboardShortcuts': 'Atajos de Teclado',
+        'settings.shortcutPalette': 'Abrir paleta de comandos',
+        'settings.shortcutNav': 'Navegar entre opciones',
+        'settings.shortcutExecute': 'Ejecutar comando',
+        'settings.shortcutClose': 'Cerrar paleta',
+
+        // Macros
+        'macro.searchPlaceholder': 'Buscar acción o macro...',
+        'macro.navigate': 'Navegar',
+        'macro.execute': 'Ejecutar',
+        'macro.close': 'Cerrar',
+        'macro.goToDashboard': 'Ir al Inicio',
+        'macro.goToCatalog': 'Ir al Catálogo de Cuentas',
+        'macro.goToEntries': 'Ir a Asientos Contables',
+        'macro.goToBalance': 'Ir al Balance General',
+        'macro.goToSettings': 'Ir a Configuración',
+        'macro.newOpening': 'Nuevo Asiento de Apertura',
+        'macro.newCashPurchase': 'Nueva Compra en Efectivo',
+        'macro.newCreditPurchase': 'Nueva Compra a Crédito',
+        'macro.newCombinedPurchase': 'Nueva Compra Combinada',
+        'macro.newCustomerAdvance': 'Nuevo Anticipo de Clientes',
+        'macro.newStationeryPurchase': 'Nueva Compra de Papelería',
+        'macro.newPrepaidRent': 'Nuevas Rentas Pagadas por Anticipado',
+        'macro.newFreeEntry': 'Nuevo Asiento Libre',
+        'macro.exportPdf': 'Exportar Balance a PDF',
+        'macro.toggleLanguage': 'Cambiar Idioma',
+        'macro.newAccount': 'Nueva Cuenta'
+    },
+
+    en: {
+        // Navigation
+        'nav.dashboard': 'Home',
+        'nav.catalog': 'Catalog',
+        'nav.entries': 'Entries',
+        'nav.balance': 'Balance',
+        'nav.settings': 'Settings',
+
+        // Search
+        'search.placeholder': 'Search accounts, entries...',
+
+        // Dashboard
+        'dashboard.welcome': 'Overview',
+        'dashboard.welcomeSubtitle': 'Your accounting summary',
+        'dashboard.totalAssets': 'Total Assets',
+        'dashboard.totalLiabilities': 'Total Liabilities',
+        'dashboard.totalEquity': 'Total Equity',
+        'dashboard.totalEntries': 'Journal Entries',
+        'dashboard.recentEntries': 'Recent Entries',
+        'dashboard.quickActions': 'Quick Actions',
+        'dashboard.chartTitle': 'Financial Distribution',
+        'dashboard.noEntries': 'No entries recorded',
+        'dashboard.noEntriesDesc': 'Start by recording your first journal entry',
+        'dashboard.startEntry': 'Record Entry',
+        'dashboard.entries': 'entries',
+
+        // Chart of accounts
+        'catalog.title': 'Chart of Accounts',
+        'catalog.subtitle': 'Manage your company\'s accounts',
+        'catalog.addAccount': 'New Account',
+        'catalog.code': 'Code',
+        'catalog.name': 'Name',
+        'catalog.type': 'Type',
+        'catalog.nature': 'Nature',
+        'catalog.balance': 'Balance',
+        'catalog.actions': 'Actions',
+        'catalog.all': 'All',
+        'catalog.asset': 'Asset',
+        'catalog.liability': 'Liability',
+        'catalog.equity': 'Equity',
+        'catalog.revenue': 'Revenue',
+        'catalog.expense': 'Expense',
+        'catalog.debit': 'Debit',
+        'catalog.credit': 'Credit',
+        'catalog.edit': 'Edit',
+        'catalog.delete': 'Delete',
+        'catalog.confirmDelete': 'Are you sure you want to delete this account?',
+        'catalog.accountCode': 'Account code',
+        'catalog.accountName': 'Account name',
+        'catalog.accountNameEn': 'Name in English',
+        'catalog.accountType': 'Account type',
+        'catalog.accountNature': 'Nature',
+        'catalog.parentAccount': 'Parent account',
+        'catalog.isGroup': 'Is group account',
+        'catalog.none': 'None',
+        'catalog.save': 'Save',
+        'catalog.cancel': 'Cancel',
+        'catalog.editAccount': 'Edit Account',
+        'catalog.newAccount': 'New Account',
+
+        // Journal entries
+        'entries.title': 'Journal Entries',
+        'entries.subtitle': 'Record your company\'s transactions',
+        'entries.selectType': 'Select entry type',
+        'entries.opening': 'Opening Entry',
+        'entries.openingDesc': 'Initial account balances',
+        'entries.cashPurchase': 'Cash Purchase',
+        'entries.cashPurchaseDesc': 'Merchandise purchased with cash',
+        'entries.creditPurchase': 'Credit Purchase',
+        'entries.creditPurchaseDesc': 'Merchandise purchased on credit',
+        'entries.combinedPurchase': 'Combined Purchase',
+        'entries.combinedPurchaseDesc': 'Part cash, part credit purchase',
+        'entries.customerAdvance': 'Customer Advance',
+        'entries.customerAdvanceDesc': 'Advance payment from customer',
+        'entries.stationeryPurchase': 'Stationery Purchase',
+        'entries.stationeryPurchaseDesc': 'Purchase of office supplies',
+        'entries.prepaidRent': 'Prepaid Rent',
+        'entries.prepaidRentDesc': 'Rent payment in advance',
+        'entries.freeEntry': 'Custom Entry',
+        'entries.freeEntryDesc': 'Record any custom journal entry',
+        'entries.date': 'Date',
+        'entries.description': 'Description',
+        'entries.descriptionPlaceholder': 'Describe the transaction...',
+        'entries.account': 'Account',
+        'entries.debit': 'Debit',
+        'entries.credit': 'Credit',
+        'entries.remove': 'Remove',
+        'entries.addRow': 'Add Movement',
+        'entries.totalDebits': 'Total Debits',
+        'entries.totalCredits': 'Total Credits',
+        'entries.save': 'Save Entry',
+        'entries.cancel': 'Cancel',
+        'entries.balanced': '✓ Balanced',
+        'entries.unbalanced': '✗ Unbalanced',
+        'entries.history': 'Entry History',
+        'entries.entryNumber': 'Entry #',
+        'entries.noEntries': 'No entries recorded',
+        'entries.noEntriesDesc': 'Select an entry type above to begin',
+        'entries.deleteEntry': 'Delete Entry',
+        'entries.confirmDeleteEntry': 'Are you sure you want to delete this entry?',
+        'entries.selectAccount': 'Select account...',
+        'entries.amount': 'Amount',
+        'entries.amountPlaceholder': '0.00',
+        'entries.back': 'Back',
+        'entries.newEntry': 'New Entry',
+
+        // Balance sheet
+        'balance.title': 'Statement of Financial Position',
+        'balance.subtitle': 'Your company\'s Balance Sheet',
+        'balance.companyName': 'Company name',
+        'balance.reportTitle': 'Statement of Financial Position',
+        'balance.asOf': 'As of',
+        'balance.assets': 'Assets',
+        'balance.currentAssets': 'Current Assets',
+        'balance.fixedAssets': 'Non-Current Assets',
+        'balance.totalAssets': 'Total Assets',
+        'balance.liabilities': 'Liabilities',
+        'balance.currentLiabilities': 'Current Liabilities',
+        'balance.totalLiabilities': 'Total Liabilities',
+        'balance.equity': 'Equity',
+        'balance.totalEquity': 'Total Equity',
+        'balance.totalLiabilitiesEquity': 'Total Liabilities + Equity',
+        'balance.equationValid': '✓ Accounting equation is satisfied: Assets = Liabilities + Equity',
+        'balance.equationInvalid': '✗ Accounting equation is NOT satisfied',
+        'balance.preparedBy': 'Prepared by',
+        'balance.reviewedBy': 'Reviewed by',
+        'balance.authorizedBy': 'Authorized by',
+        'balance.accountant': 'Accountant',
+        'balance.manager': 'General Manager',
+        'balance.director': 'Director',
+        'balance.currencyNote': 'Figures expressed in Mexican pesos (MXN)',
+        'balance.exportPdf': 'Export PDF',
+        'balance.print': 'Print',
+        'balance.noData': 'No data to display',
+        'balance.noDataDesc': 'Record journal entries to see the balance sheet',
+
+        // General
+        'general.save': 'Save',
+        'general.cancel': 'Cancel',
+        'general.delete': 'Delete',
+        'general.edit': 'Edit',
+        'general.close': 'Close',
+        'general.confirm': 'Confirm',
+        'general.success': 'Operation successful',
+        'general.error': 'Operation error',
+        'general.currency': '$',
+
+        // Toasts
+        'toast.entrySaved': 'Entry saved successfully',
+        'toast.entryDeleted': 'Entry deleted',
+        'toast.accountSaved': 'Account saved successfully',
+        'toast.accountDeleted': 'Account deleted',
+        'toast.pdfExported': 'PDF exported successfully',
+        'toast.validationError': 'Debits and credits must be balanced',
+        'toast.requiredFields': 'Complete all required fields',
+        'toast.dataSaved': 'Data saved',
+
+        // Settings / Profile
+        'settings.title': 'Settings',
+        'settings.subtitle': 'Customize your application and company data',
+        'settings.companyTab': 'Company',
+        'settings.pdfTab': 'PDF',
+        'settings.macrosTab': 'Macros',
+        'settings.companyInfo': 'Company Information',
+        'settings.companyName': 'Company Name',
+        'settings.companyNamePlaceholder': 'My Company Inc.',
+        'settings.rfc': 'Tax ID',
+        'settings.address': 'Address',
+        'settings.addressPlaceholder': 'Street, City, State',
+        'settings.phone': 'Phone',
+        'settings.email': 'Email',
+        'settings.fiscalYear': 'Fiscal Year',
+        'settings.currency': 'Currency',
+        'settings.signatures': 'Balance Sheet Signatures',
+        'settings.preparedByName': 'Prepared By Name',
+        'settings.reviewedByName': 'Reviewed By Name',
+        'settings.authorizedByName': 'Authorized By Name',
+        'settings.pdfCustomization': 'PDF Customization',
+        'settings.pdfDesc': 'Choose which elements to include when exporting the balance to PDF',
+        'settings.pdfHeader': 'Header',
+        'settings.pdfBody': 'Body',
+        'settings.pdfFooter': 'Footer',
+        'settings.pdfFormat': 'Format',
+        'settings.pdfShowCompany': 'Show company name',
+        'settings.pdfShowRfc': 'Show Tax ID',
+        'settings.pdfShowAddress': 'Show address',
+        'settings.pdfShowDate': 'Show report date',
+        'settings.pdfShowCodes': 'Show account codes',
+        'settings.pdfShowEquation': 'Show accounting equation',
+        'settings.pdfShowZero': 'Show zero-balance accounts',
+        'settings.pdfShowSignatures': 'Show signatures',
+        'settings.pdfShowNote': 'Show currency note',
+        'settings.pdfShowPages': 'Show page numbers',
+        'settings.pdfOrientation': 'Orientation',
+        'settings.portrait': 'Portrait',
+        'settings.landscape': 'Landscape',
+        'settings.pdfPageSize': 'Page Size',
+        'settings.pdfFontSize': 'Font Size',
+        'settings.small': 'Small',
+        'settings.medium': 'Medium',
+        'settings.large': 'Large',
+        'settings.resetDefaults': 'Reset Defaults',
+        'settings.macrosTitle': 'Available Macros',
+        'settings.macrosDesc': 'Run quick actions with one click or using Ctrl+K',
+        'settings.openPalette': 'Open Command Palette',
+        'settings.keyboardShortcuts': 'Keyboard Shortcuts',
+        'settings.shortcutPalette': 'Open command palette',
+        'settings.shortcutNav': 'Navigate options',
+        'settings.shortcutExecute': 'Execute command',
+        'settings.shortcutClose': 'Close palette',
+
+        // Macros
+        'macro.searchPlaceholder': 'Search action or macro...',
+        'macro.navigate': 'Navigate',
+        'macro.execute': 'Execute',
+        'macro.close': 'Close',
+        'macro.goToDashboard': 'Go to Dashboard',
+        'macro.goToCatalog': 'Go to Chart of Accounts',
+        'macro.goToEntries': 'Go to Journal Entries',
+        'macro.goToBalance': 'Go to Balance Sheet',
+        'macro.goToSettings': 'Go to Settings',
+        'macro.newOpening': 'New Opening Entry',
+        'macro.newCashPurchase': 'New Cash Purchase',
+        'macro.newCreditPurchase': 'New Credit Purchase',
+        'macro.newCombinedPurchase': 'New Combined Purchase',
+        'macro.newCustomerAdvance': 'New Customer Advance',
+        'macro.newStationeryPurchase': 'New Stationery Purchase',
+        'macro.newPrepaidRent': 'New Prepaid Rent',
+        'macro.newFreeEntry': 'New Custom Entry',
+        'macro.exportPdf': 'Export Balance to PDF',
+        'macro.toggleLanguage': 'Toggle Language',
+        'macro.newAccount': 'New Account'
+    }
+};
+
+// Variable para el idioma actual
+let currentLanguage = 'es';
+
+// Función principal para obtener traducciones
+function t(key) {
+    const dict = I18N_DICTIONARIES[currentLanguage] || I18N_DICTIONARIES['es'];
+    return dict[key] || key;
+}
+
+// Cambio el idioma de la app y actualizo todos los elementos con data-i18n
+function setLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('contafacil-lang', lang);
+
+    // Actualizo todos los elementos que tengan el atributo data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        el.textContent = t(key);
+    });
+
+    // También actualizo los placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        el.placeholder = t(key);
+    });
+
+    // Actualizo el label del botón de idioma
+    const langLabel = document.getElementById('langLabel');
+    if (langLabel) {
+        langLabel.textContent = lang.toUpperCase();
+    }
+}
+
+// Cargo el idioma guardado del localStorage
+function loadSavedLanguage() {
+    const saved = localStorage.getItem('contafacil-lang');
+    if (saved && I18N_DICTIONARIES[saved]) {
+        currentLanguage = saved;
+    }
+}
+
+// Obtengo el idioma actual
+function getCurrentLanguage() {
+    return currentLanguage;
+}
+
+// Alterno entre español e inglés
+function toggleLanguage() {
+    const newLang = currentLanguage === 'es' ? 'en' : 'es';
+    setLanguage(newLang);
+    return newLang;
+}

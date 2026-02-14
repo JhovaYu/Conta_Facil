@@ -1,0 +1,257 @@
+/* Aquí defino el layout principal: topbar arriba y contenido principal abajo
+   Es un diseño sencillo tipo dashboard, similar al de Zentra */
+
+/* === Layout principal === */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* === Topbar === */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--topbar-height);
+    padding: 0 var(--space-6);
+    background-color: var(--color-bg-topbar);
+    border-bottom: 1px solid var(--color-border);
+    flex-shrink: 0;
+    z-index: 100;
+    gap: var(--space-4);
+}
+
+.topbar__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+}
+
+.topbar__logo {
+    display: flex;
+    align-items: center;
+}
+
+.topbar__title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+}
+
+/* === Navegación en la topbar (estilo Zentra con tabs redondeados) === */
+.topbar__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    background-color: var(--color-gray-100);
+    padding: var(--space-1);
+    border-radius: var(--radius-full);
+}
+
+.topbar__nav-item {
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    transition: all var(--transition-base);
+    white-space: nowrap;
+    position: relative;
+}
+
+.topbar__nav-item:hover {
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-card-hover);
+}
+
+.topbar__nav-item.active {
+    background-color: var(--color-accent);
+    color: var(--color-text-inverse);
+    font-weight: var(--font-weight-semibold);
+    box-shadow: var(--shadow-sm);
+}
+
+/* === Acciones de la topbar (búsqueda, idioma, avatar) === */
+.topbar__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    flex-shrink: 0;
+}
+
+.topbar__search {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--color-bg-input);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-base);
+    min-width: 200px;
+}
+
+.topbar__search:focus-within {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-accent-light);
+    background-color: var(--color-bg-card);
+}
+
+.topbar__search-icon {
+    color: var(--color-text-tertiary);
+    flex-shrink: 0;
+}
+
+.topbar__search-input {
+    width: 100%;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-primary);
+}
+
+.topbar__search-input::placeholder {
+    color: var(--color-text-tertiary);
+}
+
+.topbar__lang-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--color-border);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-card);
+    transition: all var(--transition-base);
+}
+
+.topbar__lang-toggle:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background-color: var(--color-accent-light);
+}
+
+.topbar__avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    border: 2px solid var(--color-border);
+    cursor: pointer;
+    transition: border-color var(--transition-base);
+}
+
+.topbar__avatar:hover {
+    border-color: var(--color-accent);
+}
+
+/* === Contenido principal === */
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: var(--space-6) var(--space-8);
+    background-color: var(--color-bg-canvas);
+}
+
+.view-container {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    animation: fadeIn 0.3s ease;
+}
+
+/* === Vista de página === */
+.page-header {
+    margin-bottom: var(--space-6);
+}
+
+.page-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-top: var(--space-1);
+}
+
+/* === Grid para cards estadísticas === */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-5);
+    margin-bottom: var(--space-6);
+}
+
+/* === Grid para contenido de 2 columnas === */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
+}
+
+.content-grid--wide-left {
+    grid-template-columns: 2fr 1fr;
+}
+
+.content-grid--full {
+    grid-template-columns: 1fr;
+}
+
+/* === Responsividad === */
+@media (max-width: 1200px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-grid--wide-left {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .topbar {
+        padding: 0 var(--space-4);
+        gap: var(--space-2);
+    }
+
+    .topbar__search {
+        min-width: 140px;
+    }
+
+    .topbar__nav-item {
+        padding: var(--space-2) var(--space-3);
+        font-size: var(--font-size-xs);
+    }
+
+    .main-content {
+        padding: var(--space-4);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .page-title {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+@media (max-width: 640px) {
+    .topbar__search {
+        display: none;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

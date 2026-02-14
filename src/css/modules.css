@@ -1,0 +1,468 @@
+/* Aquí defino estilos específicos para cada módulo/vista de la app */
+
+/* =================================================
+   DASHBOARD
+   ================================================= */
+
+.dashboard__welcome {
+    margin-bottom: var(--space-6);
+}
+
+.dashboard__welcome-title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+}
+
+.dashboard__welcome-subtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-text-secondary);
+    margin-top: var(--space-1);
+}
+
+.dashboard__section-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-4);
+}
+
+.dashboard__quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-3);
+}
+
+.dashboard__chart-container {
+    position: relative;
+    height: 280px;
+    width: 100%;
+}
+
+/* =================================================
+   CATÁLOGO DE CUENTAS
+   ================================================= */
+
+.catalog__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+    gap: var(--space-3);
+    flex-wrap: wrap;
+}
+
+.catalog__filters {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.catalog__filter-btn {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    background-color: var(--color-bg-canvas);
+    border: 1px solid var(--color-border);
+    transition: all var(--transition-base);
+}
+
+.catalog__filter-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
+.catalog__filter-btn.active {
+    background-color: var(--color-accent);
+    color: var(--color-text-inverse);
+    border-color: var(--color-accent);
+}
+
+.catalog__account-code {
+    font-family: var(--font-mono);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    background-color: var(--color-gray-100);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+}
+
+/* Indentación para cuentas hijo */
+.catalog__indent {
+    padding-left: var(--space-6);
+}
+
+.catalog__group-row td {
+    font-weight: var(--font-weight-semibold);
+    background-color: var(--color-gray-50);
+}
+
+/* =================================================
+   ASIENTOS CONTABLES
+   ================================================= */
+
+.entries__type-selector {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+}
+
+.entries__type-card {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background-color: var(--color-bg-card);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.entries__type-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.entries__type-card.active {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-subtle);
+}
+
+.entries__type-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    background-color: var(--color-accent-light);
+    color: var(--color-accent);
+    font-size: var(--font-size-md);
+}
+
+.entries__type-name {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.entries__type-desc {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    margin-top: 2px;
+}
+
+/* Formulario de movimientos */
+.entries__movements-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 50px;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.entries__movement-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 50px;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-4);
+    border-bottom: 1px solid var(--color-border-subtle);
+    align-items: center;
+}
+
+.entries__movement-row:last-child {
+    border-bottom: none;
+}
+
+.entries__movement-remove {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    color: var(--color-text-tertiary);
+    transition: all var(--transition-fast);
+}
+
+.entries__movement-remove:hover {
+    background-color: var(--color-error-bg);
+    color: var(--color-error);
+}
+
+/* Balance de verificación en el formulario */
+.entries__verification {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-6);
+    padding: var(--space-4);
+    background-color: var(--color-gray-50);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border-top: 2px solid var(--color-border);
+}
+
+.entries__verification-item {
+    text-align: right;
+}
+
+.entries__verification-label {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    font-weight: var(--font-weight-semibold);
+}
+
+.entries__verification-value {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-mono);
+}
+
+.entries__verification-value--balanced {
+    color: var(--color-success);
+}
+
+.entries__verification-value--unbalanced {
+    color: var(--color-error);
+}
+
+/* Historial de asientos */
+.entries__history-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border-subtle);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.entries__history-item:hover {
+    background-color: var(--color-gray-50);
+}
+
+.entries__history-number {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-lg);
+    background-color: var(--color-accent-light);
+    color: var(--color-accent);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    flex-shrink: 0;
+}
+
+.entries__history-info {
+    flex: 1;
+}
+
+.entries__history-desc {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+}
+
+.entries__history-date {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    margin-top: 2px;
+}
+
+.entries__history-amount {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-mono);
+    color: var(--color-text-primary);
+}
+
+/* =================================================
+   BALANCE GENERAL
+   ================================================= */
+
+.balance__report {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.balance__header {
+    text-align: center;
+    padding: var(--space-8) var(--space-6) var(--space-6);
+    border-bottom: 2px solid var(--color-border);
+    background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-bg-card) 100%);
+}
+
+.balance__company-name {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.balance__report-title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-secondary);
+    margin-top: var(--space-1);
+}
+
+.balance__report-date {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+    margin-top: var(--space-1);
+}
+
+.balance__body {
+    padding: var(--space-6);
+}
+
+/* Secciones del balance (Activo, Pasivo, Capital) */
+.balance__section {
+    margin-bottom: var(--space-6);
+}
+
+.balance__section:last-child {
+    margin-bottom: 0;
+}
+
+.balance__section-title {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--color-accent);
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.balance__line-item {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-2) 0;
+    padding-left: var(--space-6);
+    font-size: var(--font-size-sm);
+}
+
+.balance__line-item-name {
+    color: var(--color-text-primary);
+}
+
+.balance__line-item-amount {
+    font-family: var(--font-mono);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+}
+
+.balance__subtotal {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-3) 0;
+    padding-left: var(--space-4);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-2);
+}
+
+.balance__grand-total {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    background-color: var(--color-gray-50);
+    border-top: 3px double var(--color-text-primary);
+    margin-top: var(--space-4);
+}
+
+/* Ecuación contable */
+.balance__equation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    margin-top: var(--space-4);
+    border-radius: var(--radius-lg);
+}
+
+.balance__equation--valid {
+    background-color: var(--color-success-bg);
+    border: 1px solid var(--color-success);
+}
+
+.balance__equation--invalid {
+    background-color: var(--color-error-bg);
+    border: 1px solid var(--color-error);
+}
+
+.balance__equation-text {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+.balance__equation--valid .balance__equation-text {
+    color: var(--color-success);
+}
+
+.balance__equation--invalid .balance__equation-text {
+    color: var(--color-error);
+}
+
+/* Pie del balance */
+.balance__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-8) var(--space-6) var(--space-6);
+    border-top: 1px solid var(--color-border);
+    gap: var(--space-8);
+}
+
+.balance__signature {
+    text-align: center;
+    flex: 1;
+}
+
+.balance__signature-line {
+    width: 180px;
+    height: 1px;
+    background-color: var(--color-text-primary);
+    margin: 0 auto var(--space-2);
+}
+
+.balance__signature-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+.balance__signature-role {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+}
+
+.balance__note {
+    text-align: center;
+    padding: var(--space-3) var(--space-6) var(--space-6);
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+    font-style: italic;
+}
