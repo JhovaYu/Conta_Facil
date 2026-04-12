@@ -3,16 +3,36 @@
 
 // Variable para rastrear el tipo de asiento seleccionado
 let currentEntryType = null;
+let currentEntriesFilter = 'all';
+
+function setEntriesFilter(filter) {
+    currentEntriesFilter = filter;
+    const container = document.getElementById('viewContainer');
+    if (container) {
+        container.innerHTML = renderEntries();
+        if (window.updateIcons) setTimeout(() => updateIcons(), 0);
+    }
+}
 
 // Renderizo la vista completa de asientos
 function renderEntries() {
-  const entries = getEntries();
+  const allEntries = getEntries();
+  const entries = currentEntriesFilter === 'all' ? allEntries : 
+                  currentEntriesFilter === 'operations' ? allEntries.filter(e => !e.isAdjustment) :
+                  allEntries.filter(e => e.isAdjustment);
 
   const html = `
     <div class="entries">
       <div class="page-header">
         <h1 class="page-title" data-i18n="entries.title">${t('entries.title')}</h1>
         <p class="page-subtitle" data-i18n="entries.subtitle">${t('entries.subtitle')}</p>
+      </div>
+
+      <!-- Tabs para filtrar Todos, Operaciones, Ajustes -->
+      <div class="tabs" style="margin-bottom: var(--space-4);">
+        <button class="tab ${currentEntriesFilter === 'all' ? 'active' : ''}" onclick="setEntriesFilter('all')">Todos</button>
+        <button class="tab ${currentEntriesFilter === 'operations' ? 'active' : ''}" onclick="setEntriesFilter('operations')">Operaciones</button>
+        <button class="tab ${currentEntriesFilter === 'adjustments' ? 'active' : ''}" onclick="setEntriesFilter('adjustments')">Ajustes del período</button>
       </div>
 
       <!-- Contenido en 2 columnas: Formulario/Selector + Historial -->
@@ -41,8 +61,15 @@ function renderEntries() {
 }
 
 // Renderizo el selector de tipos de asiento (las cards para elegir)
+// Filtramos los tipos basados en el tab seleccionado
 function renderEntryTypeSelector() {
-  const types = getEntryTypesList();
+  let types = getEntryTypesList();
+  
+  if (currentEntriesFilter === 'operations') {
+      types = types.filter(t => !t.isAdjustment);
+  } else if (currentEntriesFilter === 'adjustments') {
+      types = types.filter(t => t.isAdjustment);
+  }
 
   return `
     <div class="card">
@@ -52,7 +79,7 @@ function renderEntryTypeSelector() {
       <div class="entries__type-selector">
         ${types.map(type => `
           <div class="entries__type-card" onclick="showEntryForm('${type.type}')" data-type="${type.type}">
-            <div class="entries__type-icon">${type.icon}</div>
+            <div class="entries__type-icon"><i data-lucide="${type.icon}"></i></div>
             <div>
               <div class="entries__type-name" data-i18n="${type.nameKey}">${t(type.nameKey)}</div>
               <div class="entries__type-desc" data-i18n="${type.descKey}">${t(type.descKey)}</div>
@@ -100,7 +127,7 @@ function showEntryForm(type) {
           <p class="card__subtitle">${t('entries.newEntry')}</p>
         </div>
         <button class="btn btn--ghost btn--sm" onclick="cancelEntryForm()">
-          ← <span data-i18n="entries.back">${t('entries.back')}</span>
+          <i data-lucide="arrow-left" class="icon-sm" style="width: 16px; height: 16px;"></i> <span data-i18n="entries.back">${t('entries.back')}</span>
         </button>
       </div>
 
@@ -132,8 +159,8 @@ function showEntryForm(type) {
 
         <!-- Botón para agregar fila -->
         <div style="padding: var(--space-3) var(--space-4);">
-          <button type="button" class="btn btn--secondary btn--sm" onclick="addMovementRow()">
-            + <span data-i18n="entries.addRow">${t('entries.addRow')}</span>
+          <button type="button" class="btn btn--secondary btn--sm" onclick="addMovementRow()" style="display:flex; align-items:center; gap:4px">
+            <i data-lucide="plus" class="icon-sm" style="width: 16px; height: 16px;"></i> <span data-i18n="entries.addRow">${t('entries.addRow')}</span>
           </button>
         </div>
 
@@ -164,6 +191,7 @@ function showEntryForm(type) {
 
   // Actualizo los totales en tiempo real
   updateVerification();
+  if (window.updateIcons) updateIcons();
 }
 
 // Renderizo una fila de movimiento usando el searchable select en vez de un select nativo
@@ -181,7 +209,7 @@ function renderMovementRow(index, movement, accounts) {
         placeholder="0.00" step="0.01" min="0"
         value="${movement.credit || ''}"
         oninput="onCreditInput(${index}); updateVerification()">
-      <button type="button" class="entries__movement-remove" onclick="removeMovementRow(${index})">✕</button>
+      <button type="button" class="entries__movement-remove" onclick="removeMovementRow(${index})"><i data-lucide="x" style="width: 16px; height: 16px; pointer-events: none;"></i></button>
     </div>
   `;
 }
@@ -214,6 +242,7 @@ function addMovementRow() {
 
   // Tomo el contenido del div temporal
   container.appendChild(newRow.firstElementChild);
+  if (window.updateIcons) updateIcons();
 }
 
 // Elimino una fila de movimiento
@@ -309,6 +338,7 @@ function cancelEntryForm() {
   const formArea = document.getElementById('entryFormArea');
   if (formArea) {
     formArea.innerHTML = renderEntryTypeSelector();
+    if (window.updateIcons) updateIcons();
   }
 }
 
@@ -317,7 +347,7 @@ function renderEntryHistory(entries) {
   if (!entries || entries.length === 0) {
     return `
       <div class="empty-state">
-        <div class="empty-state__icon">📝</div>
+        <div class="empty-state__icon"><i data-lucide="file-text" style="width: 32px; height: 32px;"></i></div>
         <div class="empty-state__title" data-i18n="entries.noEntries">${t('entries.noEntries')}</div>
         <div class="empty-state__description" data-i18n="entries.noEntriesDesc">${t('entries.noEntriesDesc')}</div>
       </div>
@@ -329,11 +359,14 @@ function renderEntryHistory(entries) {
 
   return sorted.map(entry => {
     const totalDebit = entry.movements.reduce((sum, m) => sum + (m.debit || 0), 0);
+    const badge = entry.isAdjustment ? 
+        `<span style="margin-left:8px; font-size:0.7rem; padding:2px 6px; border-radius:4px; background:#fff3cd; color:#856404; border:1px solid #ffeeba; white-space:nowrap; display:flex; align-items:center; gap:4px;"><i data-lucide="alert-triangle" style="width: 12px; height: 12px;"></i> Ajuste</span>` : '';
+        
     return `
       <div class="entries__history-item" onclick="showEntryDetail(${entry.id})">
         <div class="entries__history-number">${entry.id}</div>
         <div class="entries__history-info">
-          <div class="entries__history-desc">${entry.description}</div>
+          <div class="entries__history-desc" style="display:flex; align-items:center;">${entry.description} ${badge}</div>
           <div class="entries__history-date">${formatDate(entry.date)}</div>
         </div>
         <div class="entries__history-amount">${formatCurrency(totalDebit)}</div>
@@ -358,11 +391,11 @@ function showEntryDetail(id) {
           <p class="card__subtitle">${entry.description} — ${formatDate(entry.date)}</p>
         </div>
         <div style="display: flex; gap: var(--space-2);">
-          <button class="btn btn--danger btn--sm" onclick="deleteEntryHandler(${entry.id})">
-            🗑️ <span data-i18n="entries.deleteEntry">${t('entries.deleteEntry')}</span>
+          <button class="btn btn--danger btn--sm" onclick="deleteEntryHandler(${entry.id})" style="display:flex; align-items:center; gap:4px">
+            <i data-lucide="trash-2" style="width: 16px; height: 16px;"></i> <span data-i18n="entries.deleteEntry">${t('entries.deleteEntry')}</span>
           </button>
-          <button class="btn btn--ghost btn--sm" onclick="cancelEntryForm()">
-            ← <span data-i18n="entries.back">${t('entries.back')}</span>
+          <button class="btn btn--ghost btn--sm" onclick="cancelEntryForm()" style="display:flex; align-items:center; gap:4px">
+            <i data-lucide="arrow-left" style="width: 16px; height: 16px;"></i> <span data-i18n="entries.back">${t('entries.back')}</span>
           </button>
         </div>
       </div>

@@ -8,26 +8,26 @@ let commandPaletteVisible = false;
 function getCommandList() {
     return [
         // Navegación
-        { id: 'nav_dashboard', icon: '🏠', category: 'nav', nameKey: 'macro.goToDashboard', action: () => navigateTo('dashboard') },
-        { id: 'nav_catalog', icon: '📚', category: 'nav', nameKey: 'macro.goToCatalog', action: () => navigateTo('catalog') },
-        { id: 'nav_entries', icon: '📝', category: 'nav', nameKey: 'macro.goToEntries', action: () => navigateTo('entries') },
-        { id: 'nav_balance', icon: '📊', category: 'nav', nameKey: 'macro.goToBalance', action: () => navigateTo('balance') },
-        { id: 'nav_settings', icon: '⚙️', category: 'nav', nameKey: 'macro.goToSettings', action: () => navigateTo('settings') },
+        { id: 'nav_dashboard', icon: 'home', category: 'nav', nameKey: 'macro.goToDashboard', action: () => navigateTo('dashboard') },
+        { id: 'nav_catalog', icon: 'book', category: 'nav', nameKey: 'macro.goToCatalog', action: () => navigateTo('catalog') },
+        { id: 'nav_entries', icon: 'file-text', category: 'nav', nameKey: 'macro.goToEntries', action: () => navigateTo('entries') },
+        { id: 'nav_balance', icon: 'pie-chart', category: 'nav', nameKey: 'macro.goToBalance', action: () => navigateTo('balance') },
+        { id: 'nav_settings', icon: 'settings', category: 'nav', nameKey: 'macro.goToSettings', action: () => navigateTo('settings') },
 
         // Asientos rápidos
-        { id: 'entry_opening', icon: '📋', category: 'entry', nameKey: 'macro.newOpening', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('opening'), 200); } },
-        { id: 'entry_cash', icon: '💵', category: 'entry', nameKey: 'macro.newCashPurchase', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('cashPurchase'), 200); } },
-        { id: 'entry_credit', icon: '🏷️', category: 'entry', nameKey: 'macro.newCreditPurchase', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('creditPurchase'), 200); } },
-        { id: 'entry_combined', icon: '🔄', category: 'entry', nameKey: 'macro.newCombinedPurchase', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('combinedPurchase'), 200); } },
-        { id: 'entry_advance', icon: '🤝', category: 'entry', nameKey: 'macro.newCustomerAdvance', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('customerAdvance'), 200); } },
-        { id: 'entry_stationery', icon: '📎', category: 'entry', nameKey: 'macro.newStationeryPurchase', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('stationeryPurchase'), 200); } },
-        { id: 'entry_rent', icon: '🏠', category: 'entry', nameKey: 'macro.newPrepaidRent', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('prepaidRent'), 200); } },
-        { id: 'entry_free', icon: '✏️', category: 'entry', nameKey: 'macro.newFreeEntry', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('free'), 200); } },
+        { id: 'entry_opening', icon: 'clipboard', category: 'entry', nameKey: 'macro.newOpening', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('opening'), 200); } },
+        { id: 'entry_cash', icon: 'dollar-sign', category: 'entry', nameKey: 'macro.newCashPurchase', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('cashPurchase'), 200); } },
+        { id: 'entry_credit', icon: 'tag', category: 'entry', nameKey: 'macro.newCreditPurchase', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('creditPurchase'), 200); } },
+        { id: 'entry_combined', icon: 'repeat', category: 'entry', nameKey: 'macro.newCombinedPurchase', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('combinedPurchase'), 200); } },
+        { id: 'entry_advance', icon: 'handshake', category: 'entry', nameKey: 'macro.newCustomerAdvance', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('customerAdvance'), 200); } },
+        { id: 'entry_stationery', icon: 'paperclip', category: 'entry', nameKey: 'macro.newStationeryPurchase', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('stationeryPurchase'), 200); } },
+        { id: 'entry_rent', icon: 'home', category: 'entry', nameKey: 'macro.newPrepaidRent', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('prepaidRent'), 200); } },
+        { id: 'entry_free', icon: 'edit-3', category: 'entry', nameKey: 'macro.newFreeEntry', action: () => { navigateTo('entries'); setTimeout(() => showEntryForm('free'), 200); } },
 
         // Acciones
-        { id: 'action_export', icon: '📄', category: 'action', nameKey: 'macro.exportPdf', action: () => { navigateTo('balance'); setTimeout(() => exportBalancePDF(), 300); } },
-        { id: 'action_lang', icon: '🌐', category: 'action', nameKey: 'macro.toggleLanguage', action: () => { toggleLanguage(); setTimeout(() => navigateTo(getCurrentRoute()), 50); } },
-        { id: 'action_new_account', icon: '➕', category: 'action', nameKey: 'macro.newAccount', action: () => { navigateTo('catalog'); setTimeout(() => showAccountModal(), 200); } },
+        { id: 'action_export', icon: 'file-down', category: 'action', nameKey: 'macro.exportPdf', action: () => { navigateTo('balance'); setTimeout(() => exportBalancePDF(), 300); } },
+        { id: 'action_lang', icon: 'globe', category: 'action', nameKey: 'macro.toggleLanguage', action: () => { toggleLanguage(); setTimeout(() => navigateTo(getCurrentRoute()), 50); } },
+        { id: 'action_new_account', icon: 'plus-circle', category: 'action', nameKey: 'macro.newAccount', action: () => { navigateTo('catalog'); setTimeout(() => showAccountModal(), 200); } },
     ];
 }
 
@@ -89,7 +89,9 @@ function renderCommandResults(commands) {
           data-command-id="${cmd.id}"
           onclick="executeCommand('${cmd.id}')"
           onmouseenter="highlightCommand(${globalIndex})">
-          <span class="command-palette__item-icon">${cmd.icon}</span>
+          <div class="command-palette__item-icon">
+            <i data-lucide="${cmd.icon}" style="width: 16px; height: 16px;"></i>
+          </div>
           <span class="command-palette__item-name">${t(cmd.nameKey)}</span>
         </div>
       `;
@@ -112,7 +114,10 @@ function openCommandPalette() {
 
     // Reseteo el contenido
     const results = document.getElementById('commandPaletteResults');
-    if (results) results.innerHTML = renderCommandResults(getCommandList());
+    if (results) {
+        results.innerHTML = renderCommandResults(getCommandList());
+        if (window.updateIcons) updateIcons();
+    }
 
     palette.classList.remove('hidden');
     commandPaletteVisible = true;
@@ -155,6 +160,7 @@ function filterCommands(query) {
     if (results) {
         results.innerHTML = renderCommandResults(filtered);
         highlightedCommandIndex = 0;
+        if (window.updateIcons) updateIcons();
     }
 }
 

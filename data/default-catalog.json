@@ -72,6 +72,15 @@
         "isGroup": false
     },
     {
+        "code": "1080",
+        "name": "IVA por Acreditar",
+        "nameEn": "Pending Input VAT",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
         "code": "1100",
         "name": "Mobiliario y equipo",
         "nameEn": "Furniture & Equipment",
@@ -95,6 +104,114 @@
         "nameEn": "Buildings",
         "type": "asset",
         "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1125",
+        "name": "Clientes por cobrar devengados",
+        "nameEn": "Accrued Accounts Receivable",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1130",
+        "name": "Equipo de Cómputo",
+        "nameEn": "Computer Equipment",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1140",
+        "name": "Equipo de Transporte",
+        "nameEn": "Transportation Equipment",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1210",
+        "name": "Gastos de Constitución",
+        "nameEn": "Incorporation Expenses",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1220",
+        "name": "Gastos de Instalación",
+        "nameEn": "Installation Expenses",
+        "type": "asset",
+        "nature": "debit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1290",
+        "name": "Depreciación acumulada",
+        "nameEn": "Accumulated Depreciation",
+        "type": "asset",
+        "nature": "credit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1291",
+        "name": "Dep. Acum. de Edificios",
+        "nameEn": "Accumulated Depreciation - Buildings",
+        "type": "asset",
+        "nature": "credit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1292",
+        "name": "Dep. Acum. Mob. y Equipo",
+        "nameEn": "Accumulated Depreciation - Furniture",
+        "type": "asset",
+        "nature": "credit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1293",
+        "name": "Dep. Acum. Eq. de Cómputo",
+        "nameEn": "Accumulated Depreciation - Computers",
+        "type": "asset",
+        "nature": "credit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1294",
+        "name": "Dep. Acum. Eq. de Transporte",
+        "nameEn": "Accumulated Depreciation - Transport",
+        "type": "asset",
+        "nature": "credit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1295",
+        "name": "Estimación para cuentas incobrables",
+        "nameEn": "Allowance for Doubtful Accounts",
+        "type": "asset",
+        "nature": "credit",
+        "parent": "1000",
+        "isGroup": false
+    },
+    {
+        "code": "1296",
+        "name": "Amort. Acum. Gtos. de Inst.",
+        "nameEn": "Accumulated Amortization - Installation",
+        "type": "asset",
+        "nature": "credit",
         "parent": "1000",
         "isGroup": false
     },
@@ -127,7 +244,7 @@
     },
     {
         "code": "2030",
-        "name": "IVA por pagar",
+        "name": "IVA Trasladado",
         "nameEn": "Output VAT",
         "type": "liability",
         "nature": "credit",
@@ -135,8 +252,17 @@
         "isGroup": false
     },
     {
+        "code": "2035",
+        "name": "IVA por Trasladar",
+        "nameEn": "Pending Output VAT",
+        "type": "liability",
+        "nature": "credit",
+        "parent": "2000",
+        "isGroup": false
+    },
+    {
         "code": "2040",
-        "name": "Acreedores diversos",
+        "name": "Acreedores diversos / Acumulados",
         "nameEn": "Other Payables",
         "type": "liability",
         "nature": "credit",
@@ -172,8 +298,17 @@
     },
     {
         "code": "3020",
+        "name": "Utilidades retenidas",
+        "nameEn": "Retained Earnings",
+        "type": "equity",
+        "nature": "credit",
+        "parent": "3000",
+        "isGroup": false
+    },
+    {
+        "code": "3300",
         "name": "Utilidad del ejercicio",
-        "nameEn": "Net Income",
+        "nameEn": "Net Income of the Year",
         "type": "equity",
         "nature": "credit",
         "parent": "3000",
@@ -189,7 +324,7 @@
         "isGroup": true
     },
     {
-        "code": "4010",
+        "code": "4100",
         "name": "Ventas",
         "nameEn": "Sales",
         "type": "revenue",
@@ -198,7 +333,97 @@
         "isGroup": false
     },
     {
+        "code": "4110",
+        "name": "Ingresos devengados",
+        "nameEn": "Accrued Revenue",
+        "type": "revenue",
+        "nature": "credit",
+        "parent": "4000",
+        "isGroup": false
+    },
+    {
+        "code": "4191",
+        "name": "Devoluciones sobre Venta",
+        "nameEn": "Sales Returns",
+        "type": "revenue",
+        "nature": "debit",
+        "parent": "4000",
+        "isGroup": false
+    },
+    {
+        "code": "4192",
+        "name": "Descuentos sobre Venta",
+        "nameEn": "Sales Discounts",
+        "type": "revenue",
+        "nature": "debit",
+        "parent": "4000",
+        "isGroup": false
+    },
+    {
         "code": "5000",
+        "name": "Costos",
+        "nameEn": "Costs",
+        "type": "expense",
+        "nature": "debit",
+        "parent": null,
+        "isGroup": true
+    },
+    {
+        "code": "5100",
+        "name": "Costo de ventas",
+        "nameEn": "Cost of Goods Sold",
+        "type": "expense",
+        "nature": "debit",
+        "parent": "5000",
+        "isGroup": false
+    },
+    {
+        "code": "5110",
+        "name": "Ajuste de inventario",
+        "nameEn": "Inventory Adjustment",
+        "type": "expense",
+        "nature": "debit",
+        "parent": "5000",
+        "isGroup": false
+    },
+    {
+        "code": "5200",
+        "name": "Compras",
+        "nameEn": "Purchases",
+        "type": "expense",
+        "nature": "debit",
+        "parent": "5000",
+        "isGroup": false
+    },
+    {
+        "code": "5210",
+        "name": "Gastos de Compra",
+        "nameEn": "Purchase Expenses",
+        "type": "expense",
+        "nature": "debit",
+        "parent": "5000",
+        "isGroup": false
+    },
+    {
+        "code": "5291",
+        "name": "Devoluciones sobre Compra",
+        "nameEn": "Purchase Returns",
+        "type": "expense",
+        "nature": "credit",
+        "parent": "5000",
+        "isGroup": false
+    },
+    {
+        "code": "5292",
+        "name": "Descuentos sobre Compra",
+        "nameEn": "Purchase Discounts",
+        "type": "expense",
+        "nature": "credit",
+        "parent": "5000",
+        "isGroup": false
+    },
+    {
+        "code": "6000",
         "name": "Gastos",
         "nameEn": "Expenses",
         "type": "expense",
@@ -207,21 +432,57 @@
         "isGroup": true
     },
     {
-        "code": "5010",
-        "name": "Gastos generales",
-        "nameEn": "General Expenses",
+        "code": "6100",
+        "name": "Gastos de administración",
+        "nameEn": "Administrative Expenses",
         "type": "expense",
         "nature": "debit",
-        "parent": "5000",
+        "parent": "6000",
         "isGroup": false
     },
     {
-        "code": "5020",
-        "name": "Gastos de renta",
-        "nameEn": "Rent Expense",
+        "code": "6110",
+        "name": "Gastos de venta",
+        "nameEn": "Selling Expenses",
         "type": "expense",
         "nature": "debit",
-        "parent": "5000",
+        "parent": "6000",
+        "isGroup": false
+    },
+    {
+        "code": "6120",
+        "name": "Depreciación del período",
+        "nameEn": "Depreciation Expense",
+        "type": "expense",
+        "nature": "debit",
+        "parent": "6000",
+        "isGroup": false
+    },
+    {
+        "code": "6130",
+        "name": "Amortización de gastos anticipados",
+        "nameEn": "Amortization Expense",
+        "type": "expense",
+        "nature": "debit",
+        "parent": "6000",
+        "isGroup": false
+    },
+    {
+        "code": "6140",
+        "name": "Estimación cuentas incobrables",
+        "nameEn": "Bad Debt Expense",
+        "type": "expense",
+        "nature": "debit",
+        "parent": "6000",
+        "isGroup": false
+    },
+    {
+        "code": "6150",
+        "name": "Gastos acumulados (nómina, servicios)",
+        "nameEn": "Accrued Expenses",
+        "type": "expense",
+        "nature": "debit",
+        "parent": "6000",
         "isGroup": false
     }
 ]

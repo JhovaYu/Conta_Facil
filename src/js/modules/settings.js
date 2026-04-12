@@ -115,6 +115,18 @@ function renderCompanyTab(company, pdfSettings) {
           </div>
         </div>
 
+        <!-- Zona de Peligro -->
+        <div style="margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--color-gray-200);">
+          <h4 style="margin-bottom: var(--space-3); color: var(--color-error);" data-i18n="settings.dangerZone">${t('settings.dangerZone')}</h4>
+          <div class="form-row" style="align-items: center; justify-content: space-between; background-color: #fff0f0; padding: var(--space-3); border-radius: 4px; border: 1px solid #ffdcdc;">
+            <div>
+              <div style="font-weight: 600; color: var(--color-error);" data-i18n="settings.resetCatalog">${t('settings.resetCatalog')}</div>
+              <div style="font-size: 0.875rem; color: #666;" data-i18n="settings.resetCatalogDesc">${t('settings.resetCatalogDesc')}</div>
+            </div>
+            <button type="button" class="btn btn--danger" onclick="resetCatalogToDefault()" data-i18n="settings.resetCatalog">${t('settings.resetCatalog')}</button>
+          </div>
+        </div>
+
         <div style="display: flex; justify-content: flex-end; gap: var(--space-3); margin-top: var(--space-4);">
           <button type="submit" class="btn btn--primary" data-i18n="general.save">${t('general.save')}</button>
         </div>
@@ -316,6 +328,8 @@ function switchSettingsTab(tab) {
             content.innerHTML = renderMacrosTab();
             break;
     }
+
+    if (window.updateIcons) updateIcons();
 }
 
 // Configuración por defecto del PDF
@@ -347,6 +361,32 @@ async function saveCompanySettings(event) {
 
     await updateCompanyInfo(company);
     showToast(t('toast.dataSaved'), 'success');
+}
+
+// Restablecer catálogo de cuentas al valor por defecto
+async function resetCatalogToDefault() {
+    if (confirm(t('settings.confirmResetCatalog') || '¿Estás seguro de restablecer el catálogo? Se perderán las cuentas creadas manualmente.')) {
+        try {
+            // Leer el catálogo por defecto
+            const defaultCatalog = await window.api.readDefaultCatalog();
+            
+            // Reemplazar las cuentas en memoria
+            const appData = getAppData();
+            appData.accounts = defaultCatalog;
+            
+            // Guardar al disco indirectamente actualizando el appData "hacky"
+            // store.js expone updateAppData('accounts', appData.accounts), pero updateAppData no es pública.
+            // Para forzar guardar los datos cambiados, podemos usar window.api.writeData(appData) directamente,
+            // pero store.js internamente usa saveDataAppData. Como workaround llamamos a updateCompany() pero realmente hemos modificado la memoria compartida.
+            
+            await window.api.writeData(appData);
+            
+            showToast(t('toast.dataSaved'), 'success');
+        } catch (error) {
+            console.error('Error al restablecer catálogo:', error);
+            showToast(t('general.error') + ': ' + error.message, 'error');
+        }
+    }
 }
 
 // Guardo la configuración del PDF

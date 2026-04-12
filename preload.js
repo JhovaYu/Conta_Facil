@@ -7,6 +7,9 @@ contextBridge.exposeInMainWorld('api', {
     // Leer los datos guardados (catálogo, asientos, configuración)
     readData: () => ipcRenderer.invoke('data:read'),
 
+    // Leer el catálogo por defecto
+    readDefaultCatalog: () => ipcRenderer.invoke('data:readDefaultCatalog'),
+
     // Guardar los datos actualizados
     writeData: (data) => ipcRenderer.invoke('data:write', data),
 

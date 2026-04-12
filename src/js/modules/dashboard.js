@@ -3,6 +3,23 @@
 
 // Renderizo la vista completa del dashboard
 function renderDashboard() {
+    const entries = getEntries();
+    if (!entries || entries.length === 0) {
+        setTimeout(() => updateIcons(), 0);
+        return `
+        <div class="dashboard">
+          <div class="empty-state" style="margin-top: 10vh;">
+            <div class="empty-state__icon"><i data-lucide="bar-chart-2" style="width: 32px; height: 32px;"></i></div>
+            <div class="empty-state__title" data-i18n="dashboard.noDataTitle">No hay asientos registrados</div>
+            <div class="empty-state__description" data-i18n="dashboard.noDataDesc">Crea tu primer asiento para comenzar.</div>
+            <button class="btn btn--primary" onclick="navigateTo('entries')" style="display:flex; align-items:center; gap:4px">
+              <i data-lucide="plus" style="width: 16px; height: 16px;"></i> <span data-i18n="dashboard.startEntry">Registrar Asiento</span>
+            </button>
+          </div>
+        </div>
+        `;
+    }
+
     const summary = generateDashboardSummary();
 
     const html = `
@@ -34,8 +51,10 @@ function renderDashboard() {
         <div class="stat-card">
           <div class="stat-card__label" data-i18n="dashboard.totalEquity">${t('dashboard.totalEquity')}</div>
           <div class="stat-card__value">${formatCurrency(summary.totalEquity)}</div>
-          <div class="stat-card__indicator stat-card__indicator--${summary.isBalanced ? 'up' : 'neutral'}">
-            <span>${summary.isBalanced ? '✓' : '—'}</span>
+          <div class="stat-card__indicator">
+              <span style="color: ${summary.isBalanced ? 'var(--color-success)' : 'var(--color-error)'}; display:flex; align-items:center;">
+                ${summary.isBalanced ? '<i data-lucide="check-circle" style="width: 16px; height: 16px;"></i>' : '<i data-lucide="x-circle" style="width: 16px; height: 16px;"></i>'}
+              </span>
           </div>
         </div>
 
@@ -86,6 +105,7 @@ function renderDashboard() {
     </div>
   `;
 
+    setTimeout(() => updateIcons(), 0);
     return html;
 }
 
@@ -94,11 +114,11 @@ function renderRecentEntriesList(entries) {
     if (!entries || entries.length === 0) {
         return `
       <div class="empty-state">
-        <div class="empty-state__icon">📝</div>
+        <div class="empty-state__icon"><i data-lucide="file-text" style="width: 32px; height: 32px;"></i></div>
         <div class="empty-state__title" data-i18n="dashboard.noEntries">${t('dashboard.noEntries')}</div>
         <div class="empty-state__description" data-i18n="dashboard.noEntriesDesc">${t('dashboard.noEntriesDesc')}</div>
-        <button class="btn btn--primary" onclick="navigateTo('entries')" data-i18n="dashboard.startEntry">
-          ${t('dashboard.startEntry')}
+        <button class="btn btn--primary" onclick="navigateTo('entries')" data-i18n="dashboard.startEntry" style="display:flex; align-items:center; gap:4px">
+          <i data-lucide="plus" style="width: 16px; height: 16px;"></i> ${t('dashboard.startEntry')}
         </button>
       </div>
     `;
@@ -125,7 +145,7 @@ function renderQuickActions() {
 
     return types.map(type => `
     <div class="quick-action" onclick="navigateToEntry('${type.type}')">
-      <div class="quick-action__icon">${type.icon}</div>
+      <div class="quick-action__icon"><i data-lucide="${type.icon}" style="width: 24px; height: 24px;"></i></div>
       <div class="quick-action__text">
         <div class="quick-action__title" data-i18n="${type.nameKey}">${t(type.nameKey)}</div>
         <div class="quick-action__desc" data-i18n="${type.descKey}">${t(type.descKey)}</div>

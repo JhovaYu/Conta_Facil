@@ -10,7 +10,13 @@ const ENTRY_TYPES = {
     CUSTOMER_ADVANCE: 'customerAdvance',
     STATIONERY_PURCHASE: 'stationeryPurchase',
     PREPAID_RENT: 'prepaidRent',
-    FREE: 'free'
+    FREE: 'free',
+    DEPRECIATION_ADJUSTMENT: 'depreciationAdjustment',
+    AMORTIZATION_ADJUSTMENT: 'amortizationAdjustment',
+    ACCRUED_REVENUE: 'accruedRevenue',
+    BAD_DEBT_ADJUSTMENT: 'badDebtAdjustment',
+    INVENTORY_ADJUSTMENT: 'inventoryAdjustment',
+    ACCRUED_EXPENSES: 'accruedExpenses'
 };
 
 // Templates predefinidos para cada tipo de asiento
@@ -75,6 +81,60 @@ const ENTRY_TEMPLATES = {
     [ENTRY_TYPES.FREE]: {
         descriptionKey: 'entries.freeEntry',
         movements: []
+    },
+
+    [ENTRY_TYPES.DEPRECIATION_ADJUSTMENT]: {
+        descriptionKey: 'entries.depreciationAdjustment',
+        isAdjustment: true,
+        movements: [
+            { accountCode: '6120', type: 'debit', label: 'Depreciación del período' },
+            { accountCode: '1290', type: 'credit', label: 'Depreciación acumulada' }
+        ]
+    },
+
+    [ENTRY_TYPES.AMORTIZATION_ADJUSTMENT]: {
+        descriptionKey: 'entries.amortizationAdjustment',
+        isAdjustment: true,
+        movements: [
+            { accountCode: '6130', type: 'debit', label: 'Amortización de gastos anticipados' },
+            { accountCode: '1060', type: 'credit', label: 'Rentas pagadas por anticipado / Papelería' }
+        ]
+    },
+
+    [ENTRY_TYPES.ACCRUED_REVENUE]: {
+        descriptionKey: 'entries.accruedRevenue',
+        isAdjustment: true,
+        movements: [
+            { accountCode: '1125', type: 'debit', label: 'Clientes por cobrar devengados' },
+            { accountCode: '4110', type: 'credit', label: 'Ingresos devengados' }
+        ]
+    },
+
+    [ENTRY_TYPES.BAD_DEBT_ADJUSTMENT]: {
+        descriptionKey: 'entries.badDebtAdjustment',
+        isAdjustment: true,
+        movements: [
+            { accountCode: '6140', type: 'debit', label: 'Estimación cuentas incobrables (Gasto)' },
+            { accountCode: '1295', type: 'credit', label: 'Estimación para cuentas incobrables' }
+        ]
+    },
+
+    [ENTRY_TYPES.INVENTORY_ADJUSTMENT]: {
+        descriptionKey: 'entries.inventoryAdjustment',
+        isAdjustment: true,
+        movements: [
+            { accountCode: '5110', type: 'debit', label: 'Ajuste de inventario' },
+            { accountCode: '1040', type: 'credit', label: 'Almacén / Inventario' }
+        ]
+    },
+
+    [ENTRY_TYPES.ACCRUED_EXPENSES]: {
+        descriptionKey: 'entries.accruedExpenses',
+        isAdjustment: true,
+        movements: [
+            { accountCode: '6150', type: 'debit', label: 'Gastos acumulados' },
+            { accountCode: '2040', type: 'credit', label: 'Acreedores diversos / Acumulados' }
+        ]
     }
 };
 
@@ -121,10 +181,14 @@ function createEntry(type, date, description, movements) {
     }
 
     // Creo el objeto del asiento
+    const template = getEntryTemplate(type);
+    const isAdjustment = template?.isAdjustment || false;
+
     const entry = {
         type,
         date: date || new Date().toISOString().split('T')[0],
         description: description || t(ENTRY_TEMPLATES[type]?.descriptionKey || 'entries.freeEntry'),
+        isAdjustment,
         movements: movements.map(m => ({
             accountCode: m.accountCode,
             debit: parseFloat(m.debit) || 0,
@@ -146,49 +210,85 @@ function getEntryTypesList() {
             type: ENTRY_TYPES.OPENING,
             nameKey: 'entries.opening',
             descKey: 'entries.openingDesc',
-            icon: '📋'
+            icon: 'clipboard-list'
         },
         {
             type: ENTRY_TYPES.CASH_PURCHASE,
             nameKey: 'entries.cashPurchase',
             descKey: 'entries.cashPurchaseDesc',
-            icon: '💵'
+            icon: 'banknote'
         },
         {
             type: ENTRY_TYPES.CREDIT_PURCHASE,
             nameKey: 'entries.creditPurchase',
             descKey: 'entries.creditPurchaseDesc',
-            icon: '🏷️'
+            icon: 'tag'
         },
         {
             type: ENTRY_TYPES.COMBINED_PURCHASE,
             nameKey: 'entries.combinedPurchase',
             descKey: 'entries.combinedPurchaseDesc',
-            icon: '🔄'
+            icon: 'refresh-cw'
         },
         {
             type: ENTRY_TYPES.CUSTOMER_ADVANCE,
             nameKey: 'entries.customerAdvance',
             descKey: 'entries.customerAdvanceDesc',
-            icon: '🤝'
+            icon: 'handshake'
         },
         {
             type: ENTRY_TYPES.STATIONERY_PURCHASE,
             nameKey: 'entries.stationeryPurchase',
             descKey: 'entries.stationeryPurchaseDesc',
-            icon: '📎'
+            icon: 'paperclip'
         },
         {
             type: ENTRY_TYPES.PREPAID_RENT,
             nameKey: 'entries.prepaidRent',
             descKey: 'entries.prepaidRentDesc',
-            icon: '🏠'
+            icon: 'home'
         },
         {
             type: ENTRY_TYPES.FREE,
             nameKey: 'entries.freeEntry',
             descKey: 'entries.freeEntryDesc',
-            icon: '✏️'
+            icon: 'pencil'
+        },
+        {
+            type: ENTRY_TYPES.DEPRECIATION_ADJUSTMENT,
+            nameKey: 'entries.depreciationAdjustment',
+            descKey: 'entries.depreciationAdjustmentDesc',
+            icon: 'trending-down'
+        },
+        {
+            type: ENTRY_TYPES.AMORTIZATION_ADJUSTMENT,
+            nameKey: 'entries.amortizationAdjustment',
+            descKey: 'entries.amortizationAdjustmentDesc',
+            icon: 'bar-chart'
+        },
+        {
+            type: ENTRY_TYPES.ACCRUED_REVENUE,
+            nameKey: 'entries.accruedRevenue',
+            descKey: 'entries.accruedRevenueDesc',
+            icon: 'trending-up'
+        },
+        {
+            type: ENTRY_TYPES.BAD_DEBT_ADJUSTMENT,
+            nameKey: 'entries.badDebtAdjustment',
+            descKey: 'entries.badDebtAdjustmentDesc',
+            icon: 'alert-triangle'
+        },
+        {
+            type: ENTRY_TYPES.INVENTORY_ADJUSTMENT,
+            nameKey: 'entries.inventoryAdjustment',
+            descKey: 'entries.inventoryAdjustmentDesc',
+            icon: 'package'
+        },
+        {
+            type: ENTRY_TYPES.ACCRUED_EXPENSES,
+            nameKey: 'entries.accruedExpenses',
+            descKey: 'entries.accruedExpensesDesc',
+            icon: 'calendar'
         }
     ];
 }

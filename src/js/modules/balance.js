@@ -16,12 +16,11 @@ function renderBalance() {
             <p class="page-subtitle" data-i18n="balance.subtitle">${t('balance.subtitle')}</p>
           </div>
         </div>
-        <div class="card">
           <div class="empty-state">
-            <div class="empty-state__icon">📊</div>
+            <div class="empty-state__icon"><i data-lucide="bar-chart-2" style="width: 32px; height: 32px;"></i></div>
             <div class="empty-state__title" data-i18n="balance.noData">${t('balance.noData')}</div>
             <div class="empty-state__description" data-i18n="balance.noDataDesc">${t('balance.noDataDesc')}</div>
-            <button class="btn btn--primary" onclick="navigateTo('entries')" data-i18n="dashboard.startEntry">${t('dashboard.startEntry')}</button>
+            <button class="btn btn--primary" onclick="navigateTo('entries')" data-i18n="dashboard.startEntry" style="display:flex; align-items:center; gap:4px"><i data-lucide="plus" style="width: 16px; height: 16px;"></i> ${t('dashboard.startEntry')}</button>
           </div>
         </div>
       </div>
@@ -36,8 +35,8 @@ function renderBalance() {
           <p class="page-subtitle" data-i18n="balance.subtitle">${t('balance.subtitle')}</p>
         </div>
         <div style="display: flex; gap: var(--space-3);">
-          <button class="btn btn--primary" onclick="exportBalancePDF()">
-            📄 <span data-i18n="balance.exportPdf">${t('balance.exportPdf')}</span>
+          <button class="btn btn--primary" onclick="exportBalancePDF()" style="display:flex; align-items:center; gap:4px">
+            <i data-lucide="file-down" style="width: 16px; height: 16px;"></i> <span data-i18n="balance.exportPdf">${t('balance.exportPdf')}</span>
           </button>
         </div>
       </div>
@@ -91,7 +90,7 @@ function renderBalance() {
           <div class="balance__section">
             <div class="balance__section-title">${balanceData.body.equity.title}</div>
             ${balanceData.body.equity.accounts.map(acc => `
-              <div class="balance__line-item">
+              <div class="balance__line-item" ${acc.balance < 0 ? 'style="color: var(--color-error);"' : ''}>
                 <span class="balance__line-item-name">${acc.name}</span>
                 <span class="balance__line-item-amount">${formatCurrency(acc.balance)}</span>
               </div>

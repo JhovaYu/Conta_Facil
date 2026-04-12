@@ -105,7 +105,9 @@ function groupAccountsByType() {
     const grouped = {
         assets: [],
         liabilities: [],
-        equity: []
+        equity: [],
+        revenues: [],
+        expenses: []
     };
 
     Object.values(balances).forEach(acc => {
@@ -119,6 +121,12 @@ function groupAccountsByType() {
                     break;
                 case ACCOUNT_TYPES.EQUITY:
                     grouped.equity.push(acc);
+                    break;
+                case ACCOUNT_TYPES.REVENUE:
+                    grouped.revenues.push(acc);
+                    break;
+                case ACCOUNT_TYPES.EXPENSE:
+                    grouped.expenses.push(acc);
                     break;
             }
         }

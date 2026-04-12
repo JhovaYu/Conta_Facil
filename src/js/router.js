@@ -26,6 +26,10 @@ const ROUTES = {
         render: renderBalance,
         afterRender: () => { }
     },
+    incomeStatement: {
+        render: renderIncomeStatement,
+        afterRender: () => { }
+    },
     settings: {
         render: renderSettings,
         afterRender: () => { }
@@ -58,6 +62,9 @@ function navigateTo(route) {
 
             // Ejecuto el afterRender (por ejemplo para las gráficas)
             ROUTES[route].afterRender();
+
+            // Me aseguro de actualizar los íconos globalmente
+            if (window.updateIcons) updateIcons();
 
             // Fade in
             requestAnimationFrame(() => {

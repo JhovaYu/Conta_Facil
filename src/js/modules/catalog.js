@@ -51,8 +51,8 @@ function renderCatalog() {
     <div class="modal-overlay hidden" id="accountModal">
       <div class="modal">
         <div class="modal__header">
-          <h3 class="modal__title" id="accountModalTitle" data-i18n="catalog.newAccount">${t('catalog.newAccount')}</h3>
-          <button class="modal__close" onclick="closeAccountModal()">✕</button>
+          <h2 class="modal__title" id="accountModalTitle">${t('catalog.newAccount')}</h2>
+          <button class="modal__close" onclick="closeAccountModal()"><i data-lucide="x" style="width: 24px; height: 24px;"></i></button>
         </div>
         <div class="modal__body">
           <form id="accountForm" onsubmit="saveAccount(event)">
@@ -120,6 +120,7 @@ function renderCatalog() {
     </div>
   `;
 
+    setTimeout(() => { if(window.updateIcons) updateIcons(); }, 0);
     return html;
 }
 
@@ -130,7 +131,7 @@ function renderCatalogRows(accounts, filter) {
     // Ordeno por código
     const sorted = [...filtered].sort((a, b) => a.code.localeCompare(b.code));
 
-    return sorted.map(account => {
+    const rows = sorted.map(account => {
         const balance = account.isGroup ? '' : formatCurrency(calculateAccountBalance(account.code));
         const isGroup = account.isGroup;
         const indent = account.parent ? 'catalog__indent' : '';
@@ -143,14 +144,17 @@ function renderCatalogRows(accounts, filter) {
         <td><span class="badge badge--${account.nature}">${getAccountNatureLabel(account.nature)}</span></td>
         <td class="text-right text-mono">${balance}</td>
         <td class="text-center">
-          <div style="display: flex; gap: 4px; justify-content: center;">
-            <button class="btn btn--ghost btn--sm" onclick="editAccount('${account.code}')" title="${t('catalog.edit')}">✏️</button>
-            <button class="btn btn--ghost btn--sm" onclick="deleteAccountHandler('${account.code}')" title="${t('catalog.delete')}">🗑️</button>
+          <div class="table__actions">
+            <button class="btn btn--ghost btn--sm" onclick="editAccount('${account.code}')" title="${t('catalog.edit')}"><i data-lucide="edit-2" style="width: 16px; height: 16px;"></i></button>
+            <button class="btn btn--ghost btn--sm" onclick="deleteAccountHandler('${account.code}')" title="${t('catalog.delete')}"><i data-lucide="trash-2" style="color:var(--color-error); width: 16px; height: 16px;"></i></button>
           </div>
         </td>
       </tr>
     `;
     }).join('');
+
+    if (window.updateIcons) setTimeout(() => updateIcons(), 0);
+    return rows;
 }
 
 // Filtro las cuentas por tipo

@@ -95,6 +95,11 @@ function setupIPCHandlers() {
     return loadData();
   });
 
+  // Leer el catálogo por defecto
+  ipcMain.handle('data:readDefaultCatalog', async () => {
+    return JSON.parse(fs.readFileSync(DEFAULT_CATALOG, 'utf-8'));
+  });
+
   // Guardar todos los datos
   ipcMain.handle('data:write', async (_event, data) => {
     saveData(data);
