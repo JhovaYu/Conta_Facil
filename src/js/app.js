@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Inyecto el command palette en el DOM
     injectCommandPalette();
 
+    // Inyecto el chatbot NIF en el DOM
+    injectChatbot();
+
     // Configuro los atajos de teclado para el command palette
     setupCommandPaletteShortcut();
 

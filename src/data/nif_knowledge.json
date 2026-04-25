@@ -1,0 +1,263 @@
+[
+  {
+    "id": "nif-a1",
+    "topic": "NIF A-1 — Estructura de las NIF",
+    "keywords": ["nif a1", "estructura", "normas", "fenomenicas", "basicas", "conceptuales", "regularizacion"],
+    "questionExamples": [
+      "¿Qué son las NIF?",
+      "¿Qué es la NIF A-1?",
+      "¿Cómo se estructuran las NIF?",
+      "¿Qué son las NIF básicas?",
+      "¿Qué son las NIF fenomenológicas?",
+      "¿Cuáles son las NIF de información financiera?"
+    ],
+    "answer": "La NIF A-1 establece la estructura de las Normas de Información Financiera (NIF). Las NIF se clasifican en:\n\n• NIF Conceptual o Básica: Define el marco conceptual que subyace a toda la información financiera (ejemplos: NIF A-1, NIF A-2, NIF A-3).\n\n• NIF de Regularización: Aplican el marco conceptual a temas específicos (ejemplos: NIF B-1, NIF C-1, etc.).\n\n• NIF Copuestas: Tratan temas más específicos dentro de alguna categoría.\n\nLa NIF A-1 define que la información financiera debe ser útil para la toma de decisiones económicas.",
+    "sourceNote": "CINIF (2018). NIF A-1 — Estructura de las NIF.",
+    "confidence": 0.95,
+    "tags": ["nif", "estructura", "basicas", "conceptuales"]
+  },
+  {
+    "id": "nif-a2",
+    "topic": "NIF A-2 — postulados básicos",
+    "keywords": ["nif a2", "postulados", "postulados basicos", "sustancia economica", "negocio en marcha", "devengacion", "asociacion"],
+    "questionExamples": [
+      "¿Qué es la NIF A-2?",
+      "¿Qué son los postulados básicos?",
+      "¿Qué es el postulado de sustancia económica?",
+      "¿Qué es el postulado de negocio en marcha?",
+      "¿Qué es devengación contable?",
+      "¿Qué es asociación de costos y gastos?"
+    ],
+    "answer": "La NIF A-2 establece los postulados básicos de la información financiera. Son fundamentos que rigen la elaboración de estados financieros:\n\n• Sustancia económica: Las transacciones deben registrarse reflejando la realidad económica, no solo la forma legal.\n\n• Negocio en marcha: Se presume que la entidad continuará operando foreseeablemente.\n\n• Devengación contable: Los efectos de transacciones se reconocen cuando ocurren, no cuando se pagan.\n\n• Asociación: Los costos y gastos deben asociarse con los ingresos que generaron.\n\n• Valor histórico original: Los activos se registran al costo de adquisición.\n\n• Negocio en marcha: La entidad se presume viable a futuro.\n\n• Consistencia: Los métodos aplicados deben ser constantes en el tiempo.",
+    "sourceNote": "CINIF (2018). NIF A-2 — Postulados básicos.",
+    "confidence": 0.95,
+    "tags": ["nif", "postulados", "sustancia", "negocio", "devengacion", "asociacion", "consistencia"]
+  },
+  {
+    "id": "nif-a3",
+    "topic": "NIF A-3 — Desarrollo del marco conceptual",
+    "keywords": ["nif a3", "marco conceptual", "objetivos", "usuario", "informacion financiera"],
+    "questionExamples": [
+      "¿Qué es la NIF A-3?",
+      "¿Qué es el marco conceptual de las NIF?",
+      "¿Cuáles son los objetivos de la información financiera?"
+    ],
+    "answer": "La NIF A-3 desarrolla el marco conceptual de la información financiera. Establece:\n\n• Objetivo de la información financiera: Proporcionar información útil para la toma de decisiones económicas de usuarios externos.\n\n• Usuarios principales: Inversionistas, acreedores, autoridades y público en general.\n\n• Características cualitativas: La información debe ser relevante, confiable, comparable y comprensible.\n\n• Elementos básicos de los estados financieros:\n  - Activo\n  - Pasivo\n  - Capital\n  - Ingresos\n  - Gastos\n\n• Reconocimiento: El proceso de registrar contablemente los elementos.",
+    "sourceNote": "CINIF (2018). NIF A-3 — Desarrollo del marco conceptual de la información financiera.",
+    "confidence": 0.9,
+    "tags": ["nif", "marco conceptual", "objetivos", "usuarios", "caracteristicas"]
+  },
+  {
+    "id": "nif-a4",
+    "topic": "NIF A-4 — Características qualitativas de la información financiera",
+    "keywords": ["nif a4", "caracteristicas cualitativas", "relevancia", "confiabilidad", "comparabilidad", "comprensibilidad"],
+    "questionExamples": [
+      "¿Qué es la NIF A-4?",
+      "¿Qué son las características cualitativas?",
+      "¿Qué es información relevante?",
+      "¿Qué hace la información financiera comparable?"
+    ],
+    "answer": "La NIF A-4 define las características cualitativas que debe tener la información financiera:\n\n• Relevancia: La información debe influir en las decisiones del usuario. Incluye:\n  - Capacidad de predicción\n  - Valor de confirmación\n  - Oportunidad\n\n• Confiabilidad: La información debe ser creíble y libre de errores importantes. Incluye:\n  - Representación fiel\n  - Verificabilidad\n  - Neutralidad\n  - Comparabilidad\n\n• Comparabilidad: Los usuarios deben poder comparar estados financieros de diferentes períodos y entidades.\n\n• Comprensibilidad: La información debe ser entendible para usuarios con conocimiento razonable de negocios.\n\n• Limitações: La información debe balancear costo-beneficio.",
+    "sourceNote": "CINIF (2018). NIF A-4 — Características cualitativas de la información financiera.",
+    "confidence": 0.9,
+    "tags": ["nif", "caracteristicas", "relevancia", "confiabilidad", "comparabilidad"]
+  },
+  {
+    "id": "nif-a5",
+    "topic": "NIF A-5 — Elementos básicos de los estados financieros",
+    "keywords": ["nif a5", "elementos", "estados financieros", "activo", "pasivo", "capital", "ingresos", "gastos"],
+    "questionExamples": [
+      "¿Qué es la NIF A-5?",
+      "¿Cuáles son los elementos de los estados financieros?",
+      "¿Qué es un activo según las NIF?",
+      "¿Qué es un pasivo?",
+      "¿Qué es el capital contable?",
+      "¿Qué son ingresos y gastos?"
+    ],
+    "answer": "La NIF A-5 define los elementos básicos de los estados financieros:\n\n• ACTIVO: Un recurso controlado por la entidad como resultado de eventos pasados, del cual se esperan beneficios económicos futuros.\n\n• PASIVO: Una obligación presente de la entidad proveniente de eventos pasados, cuya liquidación resultará en una salida de recursos.\n\n• CAPITAL CONTABLE: El residual de los activos menos los pasivos. Representa la inversión de los propietarios.\n\n• INGRESOS: Incrementos en los beneficios económicos durante un período contable, originados por entrada de activos o disminución de pasivos.\n\n• GASTOS: Decrementos en los beneficios económicos durante un período contable,originados por salida de activos o incremento de pasivos.\n\n• CUENTA DE UTILIDADES (PÉRDIDAS) INTEGRALES: Incluye la utilidad o pérdida neta del período, más el resultado de otras partidas que按 ley requieren llevarse directamente al capital.",
+    "sourceNote": "CINIF (2018). NIF A-5 — Elementos básicos de los estados financieros.",
+    "confidence": 0.9,
+    "tags": ["nif", "elementos", "activo", "pasivo", "capital", "ingresos", "gastos"]
+  },
+  {
+    "id": "nif-a6",
+    "topic": "NIF A-6 — Reconocimiento y valuación",
+    "keywords": ["nif a6", "reconocimiento", "valuacion", "costo", "valor razonable", "valor presente"],
+    "questionExamples": [
+      "¿Qué es la NIF A-6?",
+      "¿Cómo se valúan los activos?",
+      "¿Qué es el costo histórico?",
+      "¿Qué es valor razonable?"
+    ],
+    "answer": "La NIF A-6 establece las bases para el reconocimiento y valuación de los elementos de los estados financieros:\n\n• RECONOCIMIENTO: El proceso de incorporar al sistema contable un elemento que cumpla la definición de activo, pasivo, ingreso o gasto.\n\n• VALUACIÓN (BASES DE MEDICIÓN):\n  - Costo histórico o costo: El precio de adquisición.\n  - Costo actual o valor de reemplazo: Lo que costaría hoy.\n  - Valor de realización o valor neto de venta: Lo que se obtendría al vender.\n  - Valor presente: Valor actual de flujos de efectivo futuros.\n  - Valor razonable: Precio que se recibiría al vender un activo.\n\n• Las entidades deben elegir la base de valuación más apropiada según su tipo de operaciones.",
+    "sourceNote": "CINIF (2018). NIF A-6 — Reconocimiento y valuación de los elementos de los estados financieros.",
+    "confidence": 0.85,
+    "tags": ["nif", "reconocimiento", "valuacion", "costo", "valor razonable"]
+  },
+  {
+    "id": "nif-a7",
+    "topic": "NIF A-7 — Presentación y revelación",
+    "keywords": ["nif a7", "presentacion", "revelacion", "estados financieros", "notas", "informacion financiera"],
+    "questionExamples": [
+      "¿Qué es la NIF A-7?",
+      "¿Cómo se presentan los estados financieros?",
+      "¿Qué son las notas a los estados financieros?",
+      "¿Qué información debe revelarse?"
+    ],
+    "answer": "La NIF A-7 establece normas para la presentación y revelación de la información financiera:\n\n• PRESENTACIÓN: Los estados financieros deben mostrar información de manera clara y comprensible, clasificando las partidas de forma significativa.\n\n• REVELACIÓN: Toda información importante debe quedar revelada en:\n  - Los estados financieros principales\n  - Las notas a los estados financieros\n  - Información complementaria\n\n• Las notas deben:\n  - Ser claras yconcisas\n  - Ser sistemáticas\n  - Tener correspondencia con los estados financieros\n  - Indicar la base de preparación\n\n• Estructura de presentación:\n  - Estado de situación financiera (balance)\n  - Estado de resultados\n  - Estado de variaciones en el capital contable\n  - Estado de flujos de efectivo\n  - Notas a los estados financieros",
+    "sourceNote": "CINIF (2018). NIF A-7 — Presentación y revelación de la información financiera.",
+    "confidence": 0.85,
+    "tags": ["nif", "presentacion", "revelacion", "estados financieros", "notas"]
+  },
+  {
+    "id": "concepto-devengacion",
+    "topic": "Devengación contable",
+    "keywords": ["devengacion", "devengado", "base devengada", "base acumulada", "erogacion", "periodo contable"],
+    "questionExamples": [
+      "¿Qué es devengación contable?",
+      "¿Qué es el principio de devengación?",
+      "¿Qué es base devengada?",
+      "¿Cuál es la diferencia entre devengado y pagado?",
+      "¿Qué significa que un ingreso está devengado?"
+    ],
+    "answer": "El principio de devengación (o base devengada) es uno de los postulados básicos de las NIF:\n\n• DEFINICIÓN: Los ingresos y gastos deben reconocerse en el momento en que se generan, no cuando se reciben o pagan.\n\n• PRINCIPIO: Una transacción se registra cuando ocurre, independientemente de cuándo se reciba o entregue el dinero.\n\n• EJEMPLO PRÁCTICO:\n  - Un servicio se presta en enero pero se cobra en febrero: el ingreso se reconoce en enero (cuando se prestó el servicio).\n  - Un gasto de renta de enero se paga en febrero: el gasto se reconoce en enero (cuando se usó el espacio).\n\n• IMPORTANCIA: Permite que los estados financieros muestren la verdadera situación económica de la entidad en cada período, no solo los movimientos de efectivo.\n\n• CONTRAPARTIDA: Base de efectivo (lo opuesto), donde solo se registran operaciones cuando hay movimiento de dinero.",
+    "sourceNote": "Basado en NIF A-2 — Postulados básicos (CINIF 2018).",
+    "confidence": 0.95,
+    "tags": ["devengacion", "ingresos", "gastos", "periodo", "base devengada"]
+  },
+  {
+    "id": "concepto-negocio-en-marcha",
+    "topic": "Negocio en marcha",
+    "keywords": ["negocio en marcha", "going concern", "postulado", "liquidacion", "cese", "supuesto"],
+    "questionExamples": [
+      "¿Qué es el postulado de negocio en marcha?",
+      "¿Qué significa que una empresa es negocio en marcha?",
+      "¿Cuándo deja de aplicarse el negocio en marcha?",
+      "¿Qué pasa si una empresa está en liquidación?"
+    ],
+    "answer": "El postulado de negocio en marcha es uno de los fundamentos más importantes de la contabilidad:\n\n• DEFINICIÓN: Se presume que la entidad continuará operando en el futuro previsible, sin intención ni necesidad de liquidarse o reducir significativamente sus operaciones.\n\n• IMPLICACIÓN: Este supuesto justifica que los activos se presenten a su costo histórico (menos depreciación) en lugar de a su valor de liquidación.\n\n• SI NO APLICA: Cuando existe evidencia de que la entidad será liquidada o cesará operaciones, los activos deben valuarse a su valor de realización y los pasivos a su monto de liquidación.\n\n• INDICADORES DE CESE:\n  - Tendencias negativas de operación\n  - Pérdidas significativas recurrentes\n  - Incapacidad de pagar a acreedores\n  - Litigios que pueden resultar en liquidación\n  - Renuncia de la administración clave\n\n• IMPORTANCIA: Sin este postulado, la preparación de estados financieros sería muy diferente, pues todo se calcularía como si la empresa fuera a venderse mañana.",
+    "sourceNote": "Basado en NIF A-2 — Postulados básicos (CINIF 2018).",
+    "confidence": 0.95,
+    "tags": ["negocio en marcha", "going concern", "liquidacion", "postulado"]
+  },
+  {
+    "id": "concepto-sustancia-economica",
+    "topic": "Sustancia económica",
+    "keywords": ["sustancia economica", "forma legal", "realidad economica", "esencia sobre forma", "postulado"],
+    "questionExamples": [
+      "¿Qué es el postulado de sustancia económica?",
+      "¿Qué es esencia sobre forma?",
+      "¿Por qué importa la sustancia sobre la forma legal?",
+      "¿Qué es forma legal vs sustancia económica?"
+    ],
+    "answer": "El postulado de sustancia económica es fundamental en las NIF:\n\n• DEFINICIÓN: Las transacciones, transformaciones internas y otros eventos deben reconocerse y presentarse de acuerdo con su sustancia económica y realidad financiera, no únicamente con su forma legal.\n\n• PRINCIPIO CLAVE: La esencia de las operaciones prevalece sobre su forma jurídica.\n\n• EJEMPLOS PRÁCTICOS:\n  - Una empresa renta un activo pero la sustancial económica indica que es una compra a plazos: debe registrarse como compra de activo, no como renta.\n  - Una venta donde el vendedor conserva riesgos de propiedad: no puede reconocerse como venta completa.\n  - Arrendamientos financieros: Se registran como compra de activo aunque legalmente es un contrato de renta.\n\n• IMPORTANCIA:\n  - Evita evasión contable a través de estructuras legales sin substance económica real\n  - Asegura que los estados financieros reflejen la realidad del negocio\n  - Los usuarios pueden tomar mejores decisiones con información honesta\n\n• RELACIÓN CON NIF A-1: Es parte de los postulados básicos que rigen toda la información financiera.",
+    "sourceNote": "Basado en NIF A-2 — Postulados básicos (CINIF 2018).",
+    "confidence": 0.95,
+    "tags": ["sustancia economica", "forma legal", "esencia", "postulado", "realidad"]
+  },
+  {
+    "id": "concepto-consistencia",
+    "topic": "Consistencia contable",
+    "keywords": ["consistencia", "metodos contables", "politicas", "estables", "comparabilidad", "uniformidad"],
+    "questionExamples": [
+      "¿Qué es el postulado de consistencia?",
+      "¿Qué es consistencia en会计?",
+      "¿Por qué es importante que los métodos sean consistentes?",
+      "¿Puedo cambiar un método contable?"
+    ],
+    "answer": "El postulado de consistencia establece que:\n\n• DEFINICIÓN: Los métodos de accounting, criterios de valuación y presentación utilizados deben ser consistentes en el tiempo, de tal manera que permitan comparar los estados financieros de diferentes períodos.\n\n• IMPLICACIONES:\n  - Las políticas contables elegidas deben mantenerse\n  - Los mismos criterios se aplican de un período a otro\n  - Los cambios en políticas deben ser extraordinarios y revelados\n\n• ¿SE PUEDE CAMBIAR?: Sí, pero solo cuando:\n  - Una nueva NIF lo exige\n  - El cambio mejora la calidad de la información financiera\n  - El cambio se revela en notas con justificación y efectos\n\n• IMPORTANCIA PARA LA COMPARABILIDAD:\n  - Permite analizar la evolución de una empresa en el tiempo\n  - Facilita la comparación entre empresas diferentes\n  - Ayuda a identificar tendencias y anomalías\n\n• CONSEJO PRÁCTICO: Documenta siempre las políticas contables y evita cambios innecesarios.",
+    "sourceNote": "Basado en NIF A-2 — Postulados básicos (CINIF 2018).",
+    "confidence": 0.9,
+    "tags": ["consistencia", "comparabilidad", "politicas", "metodos", "uniformidad"]
+  },
+  {
+    "id": "concepto-asociacion",
+    "topic": "Asociación de costos y gastos con ingresos",
+    "keywords": ["asociacion", "costos", "gastos", "ingresos", "causa efecto", "periodo contable", "devengacion"],
+    "questionExamples": [
+      "¿Qué es el postulado de asociación?",
+      "¿Cómo se asocian costos con ingresos?",
+      "¿Qué es asociación costo-gasto?",
+      "¿Por qué se asocia el costo de ventas con los ingresos?"
+    ],
+    "answer": "El postulado de asociación es básico para la elaboración del estado de resultados:\n\n• DEFINICIÓN: Los costos y gastos deben identificarse con los ingresos que ayudaron a generar, en el mismo período contable.\n\n• PRINCIPIO: Un gasto se reconoce cuando contribuye a generar un ingreso. Si no se asocia con ningún ingreso, debe reconocerse de inmediato como gasto del período.\n\n• EJEMPLOS PRÁCTICOS:\n  - Costo de ventas: Se associa con los ingresos por ventas del mismo período (las mercaderias que se vendieron generaron esos ingresos).\n  - Comisiones de vendedores: Se reconocen cuando se generan las ventas correspondientes.\n  - Renta del edificio: Se reconoce como gasto del período en que se usó el espacio.\n\n• COSTOS INDIRECTOS: Cuando no pueden asociarse directamente, se distribuyen entre los períodos que se benefician (ejemplo: depreciación de maquinaria usada para múltiples productos).\n\n• ESTADO DE RESULTADOS: Este postulado es la base para presentar primero los ingresos, luego los costos asociados, y finalmente calcular la utilidad bruta.",
+    "sourceNote": "Basado en NIF A-2 — Postulados básicos (CINIF 2018).",
+    "confidence": 0.9,
+    "tags": ["asociacion", "costos", "gastos", "ingresos", "estado de resultados"]
+  },
+  {
+    "id": "concepto-entidad-economica",
+    "topic": "Entidad económica",
+    "keywords": ["entidad economica", "entidad", "separacion de entidad", "propietario", "persona fisica vs moral"],
+    "questionExamples": [
+      "¿Qué es una entidad económica?",
+      "¿Qué es el postulado de entidad económica?",
+      "¿Por qué se separa la entidad del propietario?",
+      "¿Una persona física puede ser una entidad?"
+    ],
+    "answer": "El postulado de entidad económica establece:\n\n• DEFINICIÓN: La información financiera se refiere a una entidad económica específica, distinta de sus propietarios y de otras entidades.\n\n• PRINCIPIO FUNDAMENTAL: Las operaciones de la entidad deben separarse de las operaciones personales de sus dueños.\n\n• TIPOS DE ENTIDADES:\n  - Personas morales (empresas constituidas legalmente como sociedades o corporaciones)\n  - Personas físicas con actividad empresarial (cuando llevan contabilidad formal)\n\n• IMPLICACIONES PRÁCTICAS:\n  - El capital del propietario aparece como capital contable en los estados financieros\n  - Los retiros del dueño reducen su capital\n  - Los aportes del dueño aumentan el capital\n  - NO se mezclan los bienes personales del dueño con los de la empresa\n\n• IMPORTANCIA: Permite que los estados financieros representen fielmente la situación de la empresa, no la situación financiera personal del dueño.",
+    "sourceNote": "Basado en NIF A-2 — Postulados básicos (CINIF 2018).",
+    "confidence": 0.9,
+    "tags": ["entidad economica", "propietario", "separacion", "capital contable"]
+  },
+  {
+    "id": "concepto-ecuacion-contable",
+    "topic": "Ecuación contable básica",
+    "keywords": ["ecuacion contable", "activo", "pasivo", "capital", "balance", "partida doble"],
+    "questionExamples": [
+      "¿Qué es la ecuación contable?",
+      "¿Cómo se relacionan activo, pasivo y capital?",
+      "¿Qué es el capital contable?",
+      "¿Qué es la ecuación fundamental de la contabilidad?"
+    ],
+    "answer": "La ecuación contable básica es el fundamento de toda la contabilidad:\n\n• FÓrmULA: Activo = Pasivo + Capital Contable\n\n• TRADUCCIón: Lo que tiene la empresa (Activo) es igual a lo que debe (Pasivo) más lo que les pertenece a los dueños (Capital).\n\n• DESPEJANDO:\n  - Capital = Activo - Pasivo\n  - Pasivo = Activo - Capital\n\n• PARTIDA DOBLE: Cada transacción afecta al menos dos cuentas, manteniendo la ecuación siempre balanceada.\n\n• EJEMPLO:\n  - Se compra mercancía por $10,000 en efectivo:\n    Activo: +Mercancía -Caja (sin cambio neto)\n    La ecuación se mantiene\n\n  - Se pide prestado $5,000:\n    Activo: +Caja $5,000\n    Pasivo: +Proveedores $5,000\n    Activo = Pasivo + Capital se mantiene\n\n• IMPORTANCIA:\n  - Es la base del balance general\n  - Permite verificar que los asientos están correctos\n  - Todo asiento que la viole está mal registrado",
+    "sourceNote": "Basado en NIF A-5 — Elementos básicos de los estados financieros (CINIF 2018).",
+    "confidence": 0.95,
+    "tags": ["ecuacion contable", "activo", "pasivo", "capital", "balance", "partida doble"]
+  },
+  {
+    "id": "concepto-partida-doble",
+    "topic": "Principio de partida doble",
+    "keywords": ["partida doble", "cargo", "abono", "debe", "haber", "sumas iguales"],
+    "questionExamples": [
+      "¿Qué es la partida doble?",
+      "¿Qué es cargo y abono?",
+      "¿Por qué la suma de cargos debe igualar a la suma de abonos?",
+      "¿Quién inventó la partida doble?"
+    ],
+    "answer": "El principio de partida doble es el fundamento de la contabilidad moderna:\n\n• DEFINICIÓN: Toda transacción contable genera al menos un cargo (débito) y un abono (crédito) de igual monto.\n\n• REGLAS BÁSICAS:\n  - Todo lo que entra se carga\n  - Todo lo que sale se abona\n  - El que recibe se carga\n  - El que entrega se abona\n\n• EN TERMINOLOGÍA MODERNA:\n  - Cargo (Débito): Registro en el lado izquierdo de la cuenta\n  - Abono (Crédito): Registro en el lado derecho de la cuenta\n\n• LA ECUACIÓN: Cargos = Abonos siempre\n  (Σ Débits = Σ Créditos)\n\n• HISTORIA: Se atribuye a Luca Pacioli (1494), fraile y matemático italiano, aunque ya se conocía antes.\n\n• IMPORTANCIA:\n  - Permite verificar que cada asiento está cuadrado\n  - Da trazabilidad completa de cada operación\n  - Es la base de todo el sistema contable moderno\n  - Un asiento sin cuadre está automáticamente mal",
+    "sourceNote": "Concepto fundamental de contabilidad. Aplicable según NIF A-5 y principios contables generally aceptados.",
+    "confidence": 0.95,
+    "tags": ["partida doble", "cargo", "abono", "debe", "haber", "debit", "credit"]
+  },
+  {
+    "id": "nif-b-1",
+    "topic": "NIF B-1 — Estado de situación financiera",
+    "keywords": ["nif b1", "balance general", "estado de situacion financiera", "activo circulante", "activo no circulante"],
+    "questionExamples": [
+      "¿Qué es la NIF B-1?",
+      "¿Qué es el estado de situación financiera?",
+      "¿Cómo se clasifica el activo en el balance?",
+      "¿Qué es activo circulante y no circulante?"
+    ],
+    "answer": "La NIF B-1 establece las normas para la presentación del Estado de Situación Financiera (Balance General):\n\n• ESTRUCTURA PRINCIPAL:\n  Activo\n    └─ Activo Circulante (se espera convertir en efectivo en menos de 12 meses)\n    └─ Activo No Circulante (largoplazo, inversión, intangible, etc.)\n  Pasivo\n    └─ Pasivo Circulante (a corto plazo)\n    └─ Pasivo No Circulante (a largo plazo)\n  Capital Contable\n    └─ Capital Social\n    └─ Utilidades Retenidas\n    └─ Reserva Legal\n\n• CARACTERÍSTICAS:\n  - Debe presentarse en forma agrupada y liquidity orden\n  - Se muestra la ecuación: Activo = Pasivo + Capital\n  - Los saldos deben corresponder a la fecha del reporte\n\n• REGLAS DE PRESENTACIÓN:\n  - Partidas de naturaleza similar pueden agruparse\n  - Se deben revelar las restricciones sobre activos\n  - Notas explicativas complementan el balance",
+    "sourceNote": "CINIF (2018). NIF B-1 — Estado de situación financiera.",
+    "confidence": 0.85,
+    "tags": ["nif b1", "balance", "estado situacion financiera", "activo", "pasivo", "capital"]
+  },
+  {
+    "id": "nif-b-2",
+    "topic": "NIF B-2 — Estado de resultados",
+    "keywords": ["nif b2", "estado de resultados", "estado de resultados integrales", "ingresos", "gastos", "utilidad", "perdida"],
+    "questionExamples": [
+      "¿Qué es la NIF B-2?",
+      "¿Qué es el estado de resultados?",
+      "¿Cómo se estructura el estado de resultados?",
+      "¿Qué es la utilidad bruta?"
+    ],
+    "answer": "La NIF B-2 establece las normas para presentar el Estado de Resultados:\n\n• ESTRUCTURA BÁSICA:\n  Ingresos\n  - Devoluciones y descuentos\n  = Ventas Netas\n  - Costo de Ventas\n  = Utilidad Bruta\n  - Gastos de Operación\n  = Utilidad de Operación\n  - Otros gastos e ingresos\n  = Utilidad antes de impuestos\n  - Impuestos\n  = Utilidad Neta\n\n• TIPOS DE ESTADO DE RESULTADOS:\n  - Estado de resultados por naturaleza (clasifica gastos por tipo)\n  - Estado de resultados por función (clasifica gastos por propósito)\n\n• REGLAS CLAVE:\n  - Los ingresos se reconocen cuando se devengan (no cuando se cobran)\n  - Los gastos se asocian con los ingresos correspondientes\n  - Las partidas extraordinarias se presentan por separado\n\n• UTILIDADES vs PÉRDIDAS:\n  - Si Ingresos > Gastos = Utilidad\n  - Si Ingresos < Gastos = Pérdida",
+    "sourceNote": "CINIF (2018). NIF B-2 — Estado de resultados.",
+    "confidence": 0.85,
+    "tags": ["nif b2", "estado de resultados", "ingresos", "gastos", "utilidad", "perdita"]
+  }
+]
